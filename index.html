@@ -1151,7 +1151,7 @@
       </div>
 
       <div class="meal-section">
-        <div class="meal-label">🍽️ Jun 4 晚餐 ― 新宿（和牛燒肉 / 壽喜燒）&nbsp;18:30–20:00</div>
+        <div class="meal-label">🍽️ Jun 4 晚餐 ― 新宿 焼肉うしごろ &nbsp;20:00 · 5位 &nbsp;<span style="background:#2d7d5a;color:#fff;border-radius:4px;padding:1px 8px;font-size:.75rem;font-weight:700;">✅ 已預訂</span></div>
         <table class="rest-table">
           <thead>
             <tr><th>#</th><th>餐廳</th><th>評分</th><th>人均</th><th>類型</th><th>特色</th><th>訂位</th></tr>
@@ -1166,14 +1166,18 @@
               <td data-label="特色">明治28年創業；A5黑毛和牛；高島屋內環境雅致</td>
               <td data-label="訂位" class="booking-yes">✅ 可</td>
             </tr>
-            <tr>
-              <td data-label="#">2</td>
-              <td data-label="餐廳"><a class="rest-link" href="https://tabelog.com/tokyo/A1304/A130401/13258565/" target="_blank">焼肉 Ushigoro 新宿三丁目店</a></td>
+            <tr style="background:#f0fff4;">
+              <td data-label="#">★</td>
+              <td data-label="餐廳">
+                <a class="rest-link" href="https://tabelog.com/tokyo/A1304/A130401/13258565/" target="_blank">焼肉うしごろ 新宿三丁目店</a>
+                <span style="background:#2d7d5a;color:#fff;font-size:.7rem;padding:1px 5px;border-radius:3px;font-weight:700;">✅ 已預訂</span>
+                <button onclick="document.getElementById('course-modal').style.display='flex'" style="font-size:.68rem;padding:1px 7px;margin-left:4px;background:#c0392b;color:#fff;border:none;border-radius:3px;cursor:pointer;font-family:inherit;font-weight:700;">菜單 🥩</button>
+              </td>
               <td data-label="評分" class="rating">★3.65</td>
-              <td data-label="人均">¥10,000–14,999</td>
+              <td data-label="人均">¥12,400/位</td>
               <td data-label="類型">和牛燒肉</td>
-              <td data-label="特色">Tabelog 100 名店；A5黑毛和牛コース；新宿三丁目駅0分；可包廂</td>
-              <td data-label="訂位" class="booking-yes">✅ 可</td>
+              <td data-label="特色">Tabelog 100 名店；完全個室・禁煙；極みコース14品；予約番号 <strong>X3XLELJDJM</strong> · 📞 09064083290</td>
+              <td data-label="訂位" class="booking-yes">✅ 已預訂</td>
             </tr>
             <tr>
               <td data-label="#">3</td>
@@ -1838,5 +1842,31 @@
   });
 })();
 </script>
+
+<!-- ── 極みコース Modal ── -->
+<div id="course-modal" onclick="if(event.target===this)this.style.display='none'" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:2000;align-items:center;justify-content:center;">
+  <div style="background:#fff;border-radius:14px;padding:24px 22px 20px;max-width:88vw;width:360px;position:relative;box-shadow:0 8px 40px rgba(0,0,0,.3);max-height:85vh;overflow-y:auto;">
+    <button onclick="document.getElementById('course-modal').style.display='none'" style="position:absolute;top:12px;right:14px;background:none;border:none;font-size:1.2rem;cursor:pointer;color:#999;line-height:1;">✕</button>
+    <div style="font-size:.7rem;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px;">焼肉うしごろ 新宿三丁目店</div>
+    <div style="font-size:1.05rem;font-weight:800;color:#c0392b;margin-bottom:2px;">極みコース 14品</div>
+    <div style="font-size:.82rem;color:#555;margin-bottom:14px;">¥12,400/位（税込）· 完全個室 · 5名 · 6/4 20:00<br>予約番号：<strong style="color:#333;">X3XLELJDJM</strong> · 📞 09064083290</div>
+    <ol style="margin:0;padding-left:1.4em;font-size:.88rem;line-height:1.9;color:#333;">
+      <li>厳選和牛とキャビアのタルタル</li>
+      <li>季節の前菜 3種</li>
+      <li>サラダ</li>
+      <li>ザブトンのすき焼き</li>
+      <li>極みのタン</li>
+      <li>特上厚切りハラミ</li>
+      <li>厳選部位 塩</li>
+      <li>本日のスープ</li>
+      <li>牛ヒレカツサンド</li>
+      <li>上ミスジ 焼きしゃぶ</li>
+      <li>厚切りサーロイン</li>
+      <li>季節の和牛石焼きご飯</li>
+      <li>デザート</li>
+    </ol>
+    <div style="margin-top:12px;font-size:.74rem;color:#999;line-height:1.5;">個室料：お会計額の10%<br>食材の入荷状況により変更あり</div>
+  </div>
+</div>
 </body>
 </html>
