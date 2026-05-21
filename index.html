@@ -1,0 +1,1790 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>富士山・東京自駕遊 2026</title>
+  <style>
+    :root {
+      --red: #c0392b;
+      --dark: #1a1a2e;
+      --mid: #3d405b;
+      --cream: #f8f5f0;
+      --warm: #e8dcc8;
+      --accent: #e07b39;
+      --green: #2d7d5a;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, "Hiragino Sans", "Noto Sans TC", sans-serif;
+      background: var(--cream);
+      color: var(--dark);
+      line-height: 1.7;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(135deg, var(--dark) 0%, var(--mid) 60%, #81433a 100%);
+      color: #fff;
+      padding: 60px 24px 48px;
+      text-align: center;
+    }
+    .hero h1 { font-size: clamp(1.8rem, 5vw, 3rem); letter-spacing: .05em; margin-bottom: 10px; }
+    .hero .subtitle { font-size: 1.05rem; opacity: .8; }
+    .hero .dates {
+      display: inline-block;
+      margin-top: 18px;
+      background: rgba(255,255,255,.15);
+      border-radius: 999px;
+      padding: 6px 22px;
+      font-size: .95rem;
+      letter-spacing: .08em;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--dark);
+      display: flex;
+      overflow-x: auto;
+      gap: 0;
+      scrollbar-width: none;
+    }
+    nav::-webkit-scrollbar { display: none; }
+    nav a {
+      color: rgba(255,255,255,.7);
+      text-decoration: none;
+      padding: 8px 14px;
+      white-space: nowrap;
+      font-size: .78rem;
+      transition: color .2s, background .2s;
+      border-bottom: 2px solid transparent;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      line-height: 1.3;
+    }
+    nav a:hover { color: #fff; border-bottom-color: var(--accent); }
+    .nav-day { font-weight: 700; font-size: .82rem; }
+    .nav-sub { font-size: .68rem; opacity: .65; }
+
+    /* ── LAYOUT ── */
+    .container { max-width: 900px; margin: 0 auto; padding: 0 20px 60px; }
+
+    /* ── SECTION HEADERS ── */
+    .section-title {
+      margin: 40px 0 18px;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--mid);
+      border-left: 4px solid var(--accent);
+      padding-left: 12px;
+    }
+
+    /* ── INFO CARDS ── */
+    .card {
+      background: #fff;
+      border-radius: 10px;
+      padding: 18px 20px;
+      margin-bottom: 14px;
+      box-shadow: 0 1px 6px rgba(0,0,0,.07);
+    }
+    .card h3 { font-size: 1rem; color: var(--mid); margin-bottom: 6px; }
+    .card p, .card li { font-size: .9rem; color: #444; }
+    .card ul { padding-left: 18px; }
+    .card li { margin-bottom: 4px; }
+
+    /* ── FLIGHT TAG ── */
+    .flight-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 8px;
+    }
+    .flight-tag {
+      background: var(--dark);
+      color: #fff;
+      border-radius: 6px;
+      padding: 6px 16px;
+      font-size: .88rem;
+      font-weight: 600;
+      letter-spacing: .05em;
+    }
+
+    /* ── HOTEL TABLE ── */
+    .hotel-table { width: 100%; border-collapse: collapse; margin-top: 8px; }
+    .hotel-table th {
+      background: var(--warm);
+      color: var(--mid);
+      font-size: .8rem;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      padding: 8px 12px;
+      text-align: left;
+    }
+    .hotel-table td {
+      padding: 10px 12px;
+      border-bottom: 1px solid #ece8e0;
+      font-size: .88rem;
+      vertical-align: top;
+    }
+    .hotel-table tr:last-child td { border-bottom: none; }
+    .hotel-table tr:nth-child(even) td { background: #faf8f5; }
+    .night-badge {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      border-radius: 4px;
+      padding: 2px 8px;
+      font-size: .78rem;
+      margin-bottom: 4px;
+    }
+
+    /* ── DAY BLOCKS ── */
+    .day-block {
+      margin-top: 36px;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 12px rgba(0,0,0,.08);
+    }
+    .day-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 16px 20px;
+      background: var(--mid);
+      color: #fff;
+    }
+    .day-num {
+      background: var(--accent);
+      border-radius: 50%;
+      width: 42px; height: 42px;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 800;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+    .day-title { font-size: 1.05rem; font-weight: 600; }
+    .day-date { font-size: .82rem; opacity: .75; }
+    .day-body { background: #fff; padding: 18px 20px; }
+
+    /* ── ACTIVITY LIST ── */
+    .activity { display: flex; gap: 14px; margin-bottom: 14px; }
+    .activity-time {
+      font-size: .78rem;
+      font-weight: 700;
+      color: var(--accent);
+      min-width: 90px;
+      padding-top: 2px;
+      white-space: nowrap;
+    }
+    .activity-content { flex: 1; }
+    .activity-content strong { font-size: .95rem; color: var(--dark); }
+    .activity-content p, .activity-content li { font-size: .85rem; color: #555; margin-top: 3px; }
+    .activity-content ul { padding-left: 16px; }
+    .activity-content li { margin-bottom: 3px; }
+    .mapcode {
+      display: inline-block;
+      background: #e8f4e8;
+      color: var(--green);
+      border-radius: 4px;
+      padding: 1px 7px;
+      font-size: .78rem;
+      font-weight: 600;
+      margin-top: 4px;
+    }
+
+    /* ── MEAL SECTION ── */
+    .meal-section { margin-top: 18px; }
+    .meal-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #fff3ec;
+      border: 1px solid #f0c8a0;
+      border-radius: 6px;
+      padding: 5px 12px;
+      font-size: .82rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+    .rest-table { width: 100%; border-collapse: collapse; font-size: .82rem; }
+    .rest-table th {
+      background: var(--warm);
+      padding: 7px 10px;
+      text-align: left;
+      font-size: .75rem;
+      color: var(--mid);
+      text-transform: uppercase;
+      letter-spacing: .05em;
+    }
+    .rest-table td {
+      padding: 8px 10px;
+      border-bottom: 1px solid #ece8e0;
+      vertical-align: top;
+    }
+    .rest-table tr:last-child td { border-bottom: none; }
+    .rest-table tr:nth-child(even) td { background: #faf8f5; }
+    .rating { color: #c07000; font-weight: 700; }
+    .booking-yes { color: var(--green); font-weight: 600; }
+    .booking-no { color: #999; }
+    .rest-link { color: var(--accent); text-decoration: none; }
+    .rest-link:hover { text-decoration: underline; }
+
+    /* ── TIP BOX ── */
+    .tip {
+      background: #fffbe6;
+      border-left: 3px solid #f0c050;
+      border-radius: 0 6px 6px 0;
+      padding: 10px 14px;
+      margin-top: 10px;
+      font-size: .82rem;
+      color: #6a5000;
+    }
+    .tip strong { color: #8a6800; }
+
+    /* ── RENTAL CAR ── */
+    .rental-card {
+      background: #f0f4ff;
+      border-left: 3px solid #5a7fcb;
+      border-radius: 0 8px 8px 0;
+      padding: 12px 16px;
+      margin-top: 14px;
+      font-size: .85rem;
+    }
+    .rental-card h4 { color: #3a5a9b; margin-bottom: 6px; font-size: .9rem; }
+    .rental-card li { margin-bottom: 4px; color: #444; }
+
+    /* ── BROTHER JOIN CALLOUT ── */
+    .bro-join {
+      background: linear-gradient(135deg, #e8f4ff 0%, #f0e8ff 100%);
+      border: 1.5px solid #a0c4f0;
+      border-radius: 10px;
+      padding: 14px 16px;
+      margin-bottom: 16px;
+      font-size: .88rem;
+    }
+    .bro-join h4 {
+      color: #2a5fa0;
+      font-size: .95rem;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .bro-join ul { padding-left: 18px; }
+    .bro-join li { margin-bottom: 4px; color: #334; }
+    .bro-badge {
+      display: inline-block;
+      background: #2a5fa0;
+      color: #fff;
+      border-radius: 999px;
+      padding: 2px 10px;
+      font-size: .72rem;
+      font-weight: 700;
+      vertical-align: middle;
+    }
+    .shopper-badge {
+      display: inline-block;
+      border-radius: 999px;
+      padding: 2px 10px;
+      font-size: .72rem;
+      font-weight: 700;
+      vertical-align: middle;
+      margin-left: 6px;
+    }
+    .shopper-athena { background: #f06292; color: #fff; }
+    .shopper-leo    { background: #00897b; color: #fff; }
+
+    /* ── BACKUP SECTION ── */
+    .backup-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 14px;
+      margin-top: 16px;
+    }
+    .backup-card {
+      background: #fff;
+      border-radius: 8px;
+      padding: 14px 16px;
+      box-shadow: 0 1px 6px rgba(0,0,0,.07);
+      border-top: 3px solid var(--accent);
+    }
+    .backup-card h4 { font-size: .9rem; color: var(--mid); margin-bottom: 6px; }
+    .backup-card p { font-size: .82rem; color: #555; }
+
+    /* ── DIVIDER ── */
+    hr { border: none; border-top: 1px solid var(--warm); margin: 20px 0; }
+
+    /* 特色 button hidden on desktop */
+    .tokushoku-btn { display: none; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 640px) {
+      /* Hero */
+      .hero { padding: 36px 16px 28px; }
+      .hero h1 { font-size: 1.5rem; }
+
+      /* Container */
+      .container { padding: 0 12px 48px; }
+
+      /* Nav — keep horizontal scroll, tighten padding */
+      nav a { padding: 7px 10px; }
+      .nav-day { font-size: .75rem; }
+      .nav-sub { display: none; }
+
+      /* Section title */
+      .section-title { font-size: 1.1rem; margin: 28px 0 12px; }
+
+      /* Day block header */
+      .day-header { padding: 12px 14px; gap: 10px; }
+      .day-num { width: 36px; height: 36px; font-size: .95rem; }
+      .day-title { font-size: .92rem; }
+      .day-date { font-size: .75rem; }
+      .day-body { padding: 14px 14px; }
+
+      /* Activities */
+      .activity { flex-direction: column; gap: 2px; margin-bottom: 16px; }
+      .activity-time {
+        min-width: unset;
+        font-size: .72rem;
+        background: var(--warm);
+        display: inline-block;
+        padding: 2px 8px;
+        border-radius: 4px;
+        margin-bottom: 4px;
+      }
+      .activity-content strong { font-size: .9rem; }
+      .activity-content p,
+      .activity-content li { font-size: .82rem; }
+
+      /* Rental card */
+      .rental-card { padding: 10px 12px; font-size: .82rem; }
+
+      /* Hotel table → compact mobile */
+      .hotel-table thead { display: none; }
+      .hotel-table tr { display: block; border-bottom: 2px solid var(--warm); padding: 8px 12px; }
+      .hotel-table td { display: block; padding: 0; border: none; }
+      .hotel-table td::before { display: none; }
+      .hotel-table td[data-label="晚數"] { display: inline-block; vertical-align: middle; margin-bottom: 3px; font-size: .8rem; }
+      .hotel-table td[data-label="地區"] { display: inline-block; vertical-align: middle; margin-left: 7px; font-size: .76rem; color: var(--mid); }
+      .hotel-table td[data-label="酒店"] { font-size: .85rem; font-weight: 700; margin: 2px 0 1px; }
+      .hotel-table td[data-label="備註"] { font-size: .74rem; color: #555; line-height: 1.45; }
+
+      /* Restaurant table → compact mobile cards */
+      .rest-table thead { display: none; }
+      .rest-table tr { display: block; border-bottom: 2px solid var(--warm); padding: 7px 10px; }
+      .rest-table td { display: inline; padding: 0; border: none; font-size: .82rem; }
+      .rest-table td::before { display: none; }
+      .rest-table td[data-label="#"] { display: none; }
+      .rest-table td[data-label="特色"] { display: none; }
+      .rest-table td[data-label="餐廳"] { display: block; font-size: .87rem; margin-bottom: 3px; }
+      .rest-table td[data-label="評分"] { color: #c07000; font-weight: 700; }
+      .rest-table td[data-label="人均"]::before,
+      .rest-table td[data-label="預算"]::before,
+      .rest-table td[data-label="預算/人"]::before { content: " · "; color: #bbb; }
+      .rest-table td[data-label="類型"]::before { content: " · "; color: #888; }
+      .rest-table td[data-label*="訂位"] { display: block; font-size: .78rem; margin-top: 2px; }
+
+      /* 特色 button — mobile only */
+      .tokushoku-btn {
+        display: inline-block;
+        font-size: .68rem; padding: 1px 5px; margin-left: 5px;
+        background: var(--accent); color: #fff; border: none;
+        border-radius: 3px; cursor: pointer; vertical-align: middle;
+        font-family: inherit; white-space: nowrap;
+      }
+
+      /* Meal label */
+      .meal-label { font-size: .78rem; padding: 5px 10px; }
+
+      /* Backup grid */
+      .backup-grid { grid-template-columns: 1fr; }
+
+      /* Tip */
+      .tip { font-size: .8rem; }
+
+      /* Flight tags */
+      .flight-row { gap: 8px; }
+      .flight-tag { font-size: .82rem; padding: 5px 12px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="hero">
+  <h1>🗻 富士山・東京自駕遊</h1>
+  <p class="subtitle">熱海 · 伊豆 · 富士山 · 東京</p>
+  <div class="dates">May 30 – Jun 7, 2026 &nbsp;·&nbsp; 9 Days &nbsp;·&nbsp; 5 People</div>
+</div>
+
+<nav>
+  <a href="#overview">概覽</a>
+  <a href="#day1"><span class="nav-day">May 30</span><span class="nav-sub">抵達</span></a>
+  <a href="#day2"><span class="nav-day">May 31</span><span class="nav-sub">三島·熱海</span></a>
+  <a href="#day3"><span class="nav-day">Jun 1</span><span class="nav-sub">伊豆</span></a>
+  <a href="#day4"><span class="nav-day">Jun 2</span><span class="nav-sub">富士山</span></a>
+  <a href="#day5"><span class="nav-day">Jun 3</span><span class="nav-sub">富士五湖</span></a>
+  <a href="#day6"><span class="nav-day">Jun 4</span><span class="nav-sub">入東京</span></a>
+  <a href="#day7"><span class="nav-day">Jun 5</span><span class="nav-sub">原宿·澀谷</span></a>
+  <a href="#day8"><span class="nav-day">Jun 6</span><span class="nav-sub">台場·鐵塔</span></a>
+  <a href="#day9"><span class="nav-day">Jun 7</span><span class="nav-sub">回港</span></a>
+  <a href="#backup">備用景點</a>
+  <a href="https://dash.cloudflare.com/0a9c8249f207740e8049524a94f6b162/one/access-controls/policies/a9b3057a-0a75-4b4e-aae4-04aec009b5d9/edit" target="_blank" id="policy-btn" style="display:none; background:#f6821f; color:#fff; border-radius:5px; padding:3px 10px; font-size:.78rem; font-weight:700;">Policy</a>
+</nav>
+<script>
+(function(){
+  try {
+    const jwt = document.cookie.split(';').map(c=>c.trim()).find(c=>c.startsWith('CF_Authorization='));
+    if (!jwt) return;
+    const payload = JSON.parse(atob(jwt.split('=').slice(1).join('=').split('.')[1].replace(/-/g,'+').replace(/_/g,'/')));
+    if (payload.email === 'leoycy@gmail.com') {
+      document.getElementById('policy-btn').style.display = 'inline-block';
+    }
+  } catch(e) {}
+})();
+</script>
+
+<div class="container">
+
+  <!-- ═══ OVERVIEW ═══ -->
+  <div id="overview">
+    <div class="section-title">✈️ 航班</div>
+    <div class="card">
+      <h3>Cathay Pacific — 已購票</h3>
+      <div class="flight-row">
+        <div class="flight-tag">↗ May 30 &nbsp; CX504 &nbsp;｜&nbsp; HKG 09:05 → NRT 14:30</div>
+        <div class="flight-tag">↙ Jun 7 &nbsp; CX521 &nbsp;｜&nbsp; NRT 17:15 → HKG 21:10</div>
+      </div>
+    </div>
+
+    <div class="section-title">🏨 住宿安排（5人）</div>
+    <div class="card" style="padding:0; overflow:hidden;">
+      <table class="hotel-table">
+        <thead>
+          <tr>
+            <th>晚數</th>
+            <th>地區</th>
+            <th>酒店</th>
+            <th>備註</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td data-label="晚數"><span class="night-badge">2晚</span><br>May 30–Jun 1</td>
+            <td data-label="地區"><strong>熱海區</strong></td>
+            <td data-label="酒店">Atami Hotel Nagisakan</td>
+            <td data-label="備註">Sea view room · 含早餐 · 到埗付款<br><small>11-9 Nagisa-cho, Central Atami, 413-0014</small></td>
+          </tr>
+          <tr>
+            <td data-label="晚數"><span class="night-badge">3晚</span><br>Jun 1–Jun 4</td>
+            <td data-label="地區"><strong>富士山區</strong></td>
+            <td data-label="酒店">HOTEL MYSTAYS Fuji Onsen Resort<br><small>富士山展望温泉酒店</small></td>
+            <td data-label="備註">Comfort Twin · 非吸煙 · 已付款 (Agoda, 4/11)<br><small>2654 Arakura, Fuji-Yoshida-shi, 403-0011</small></td>
+          </tr>
+          <tr style="background:#eef4ff;">
+            <td data-label="晚數"><span class="night-badge" style="background:#2a5fa0">1晚</span><br>Jun 3–Jun 4<br><span class="bro-badge" style="font-size:.68rem;margin-top:4px;display:inline-block">弟弟</span></td>
+            <td data-label="地區"><strong>富士山區</strong></td>
+            <td data-label="酒店">HOTEL MYSTAYS Fuji Onsen Resort<br><small>富士山展望温泉酒店</small></td>
+            <td data-label="備註">Standard Double · 非吸煙 · 含早餐 · 已付款 (Agoda)<br>Booking ID: <strong>2011710359</strong><br><small>Check-in: 15:00 · Check-out: 11:00 · 📞 +81-555-217-510</small></td>
+          </tr>
+          <tr>
+            <td data-label="晚數"><span class="night-badge">3晚</span><br>Jun 4–Jun 7</td>
+            <td data-label="地區"><strong>東京・銀座</strong></td>
+            <td data-label="酒店">HOTEL MUSSE GINZA MEITETSU<br><small>銀座名鐵穆瑟酒店 ホテルミュッセ 銀座名鉄</small></td>
+            <td data-label="備註">Check-in: 3pm後 · Check-out: 11am前<br><small>7-12-9 Ginza, Chuo, Tokyo, 104-0061</small></td>
+          </tr>
+          <tr style="background:#eef4ff;">
+            <td data-label="晚數"><span class="night-badge" style="background:#2a5fa0">3晚</span><br>Jun 4–Jun 7<br><span class="bro-badge" style="font-size:.68rem;margin-top:4px;display:inline-block">弟弟</span></td>
+            <td data-label="地區"><strong>東京・銀座</strong></td>
+            <td data-label="酒店">HOTEL MUSSE GINZA MEITETSU<br><small>銀座名鐵穆瑟酒店 ホテルミュッセ 銀座名鉄</small></td>
+            <td data-label="備註">Small Double Room · 非吸煙 · 含早餐 · 已付款 (Agoda)<br>Booking ID: <strong>1727130882</strong><br><small>7-12-9 Ginza, Chuo, Tokyo, 104-0061 · 📞 +81-3-3541-3535</small></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section-title">🚗 租車資訊</div>
+    <div class="rental-card">
+      <h4>✅ Nissan Rent a Car — (W4) Nissan Serena（已預訂）</h4>
+      <table style="width:100%;border-collapse:collapse;margin-top:8px;font-size:.85rem;">
+        <tr>
+          <td style="padding:4px 8px 4px 0;color:#3a5a9b;font-weight:700;white-space:nowrap;vertical-align:top;width:110px">預約號碼</td>
+          <td style="padding:4px 0;font-weight:700;letter-spacing:.05em">26051500119</td>
+        </tr>
+        <tr>
+          <td style="padding:4px 8px 4px 0;color:#3a5a9b;font-weight:700;vertical-align:top">預約人</td>
+          <td style="padding:4px 0">Hui Sin Wah &nbsp;·&nbsp; 📞 +852 6808 1076 &nbsp;·&nbsp; leoandathena@gmail.com</td>
+        </tr>
+        <tr style="border-top:1px solid #ccd9f0">
+          <td style="padding:8px 8px 4px 0;color:#2d7d5a;font-weight:700;vertical-align:top">🔑 取車</td>
+          <td style="padding:8px 0 4px">
+            <strong>30/05/2026（五）15:30</strong><br>
+            成田機場第2候機樓服務櫃檯<br>
+            <small>千葉縣成田市古迂字古迂1-1 &nbsp;·&nbsp; 📞 0476-33-8623</small>
+          </td>
+        </tr>
+        <tr style="border-top:1px solid #ccd9f0">
+          <td style="padding:8px 8px 4px 0;color:#c0392b;font-weight:700;vertical-align:top">🔄 還車</td>
+          <td style="padding:8px 0 4px">
+            <strong>04/06/2026（四）16:00</strong><br>
+            新宿站西口<br>
+            <small>東京都新宿区西新宿一丁目西口地下街１号 小田急ACE南館B1F &nbsp;·&nbsp; 📞 03-3347-4123</small>
+          </td>
+        </tr>
+        <tr style="border-top:1px solid #ccd9f0">
+          <td style="padding:8px 8px 4px 0;color:#3a5a9b;font-weight:700;vertical-align:top">選配</td>
+          <td style="padding:8px 0 4px">ETC 卡（付費）× 1 &nbsp;·&nbsp; 行車記錄儀（付費）× 1<br>
+          <small>汽車導航、ETC車載設備為標準配置</small></td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="section-title">🍽️ Tabelog 訂位資料</div>
+    <div class="card" style="font-size:.9rem;">
+      <table style="width:100%;border-collapse:collapse;">
+        <tr>
+          <td style="padding:5px 12px 5px 0;color:var(--mid);font-weight:700;white-space:nowrap;width:90px">姓名</td>
+          <td style="padding:5px 0;font-size:1rem;letter-spacing:.05em"><strong>よう れお</strong> <span style="color:#999;font-size:.8rem;margin-left:8px">（Yeung Leo）</span></td>
+        </tr>
+        <tr style="border-top:1px solid var(--warm)">
+          <td style="padding:5px 12px 5px 0;color:var(--mid);font-weight:700">電話</td>
+          <td style="padding:5px 0;font-size:1rem;letter-spacing:.08em"><strong>090-6408-3290</strong></td>
+        </tr>
+        <tr style="border-top:1px solid var(--warm)">
+          <td style="padding:5px 12px 5px 0;color:var(--mid);font-weight:700;vertical-align:top">備註</td>
+          <td style="padding:5px 0;font-size:.82rem;color:#666">以上為 Tabelog 及電話訂位專用資料，請勿對外分享</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- ═══ DAY 1 ═══ -->
+  <div id="day1" class="day-block">
+    <div class="day-header">
+      <div class="day-num">1</div>
+      <div>
+        <div class="day-title">抵達 → 租車 → 熱海</div>
+        <div class="day-date">May 30（Saturday）</div>
+      </div>
+    </div>
+    <div class="day-body">
+      <div class="activity">
+        <div class="activity-time">09:05 / 14:30</div>
+        <div class="activity-content">
+          <strong>CX504 &nbsp;｜&nbsp; HKG 09:05 起飛 → NRT T2 14:30 抵達</strong>
+          <p>辦理入境手續，前往第2候機樓租車櫃檯取車</p>
+        </div>
+      </div>
+      <div class="activity">
+        <div class="activity-time">~16:00</div>
+        <div class="activity-content">
+          <strong>取車：Nissan Serena 🚗 → 出發前往熱海</strong>
+          <p>預計車程 <strong>約2.5–3小時</strong>（東名高速 ·  約130km）→ 預計 18:30–19:00 抵達熱海</p>
+        </div>
+      </div>
+      <div class="meal-section">
+        <div class="meal-label">🍽️ May 30 晚餐 ― 熱海 &nbsp;19:30 · 4位 &nbsp;<span style="background:#2d7d5a;color:#fff;border-radius:4px;padding:1px 8px;font-size:.75rem;font-weight:700;">✅ 已預訂</span></div>
+        <table class="rest-table">
+          <thead>
+            <tr><th>#</th><th>餐廳</th><th>評分</th><th>預算/人</th><th>特色</th><th>訂位</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-label="#">1</td>
+              <td data-label="餐廳"><a class="rest-link" href="https://tabelog.com/tw/shizuoka/A2205/A220502/22031553/" target="_blank">和食餐廳 熱海 碧（みどり）</a></td>
+              <td data-label="評分" class="rating">★3.33</td>
+              <td data-label="預算">¥6,000–15,000</td>
+              <td data-label="特色">和食・会席；靜岡海產；懷石會席<br><small>テーブル席 / 禁煙 · 席のみ予約</small></td>
+              <td data-label="訂位" class="booking-yes">✅ 已訂</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="tip" style="background:#e8f5e9;border-color:#2d7d5a;color:#1b5e20;">
+          ✅ <strong>已預訂確認</strong> &nbsp;·&nbsp; 予約番号：<strong>SCJLVMDDDX</strong> &nbsp;·&nbsp; 電話：09064083290 &nbsp;·&nbsp; 確認郵件已發送至 leoycy@gmail.com
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ DAY 2 ═══ -->
+  <div id="day2" class="day-block">
+    <div class="day-header">
+      <div class="day-num">2</div>
+      <div>
+        <div class="day-title">三島天空步道 → ACAO FOREST</div>
+        <div class="day-date">May 31（Sunday）</div>
+      </div>
+    </div>
+    <div class="day-body">
+      <div class="activity">
+        <div class="activity-time">上午</div>
+        <div class="activity-content">
+          <strong>三島天空步道（三島スカイウォーク）</strong> — 建議 1.5 小時
+          <span class="mapcode">📍 57 574 284*25</span>
+          <ul>
+            <li>日本最長步行吊橋，全長400公尺，70公尺高；富士山+駿河灣全景</li>
+            <li>北側：SKYWALK COFFEE（富士山造型甜點）；南側：SKYWALK PARK（繩索/電動車/滑索）</li>
+            <li>全票 ¥1,100 · 9:00–17:00</li>
+            <li>地址：靜岡縣三島市笹原新田 &nbsp;<span class="mapcode">🅿 50 238 519*71（免費500台）</span></li>
+            <li><a href="https://lovetogo.tw/202401-tokyo/mishima-skywalk/index.php" target="_blank">▶ 更多資訊</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="meal-section">
+        <div class="meal-label">🍽️ May 31 午餐 ― 熱海 &nbsp;電話訂位 · 4位</div>
+        <table class="rest-table">
+          <thead>
+            <tr><th>#</th><th>餐廳</th><th>評分</th><th>預算/人</th><th>特色</th><th>訂位</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-label="#">1</td>
+              <td data-label="餐廳"><a class="rest-link" href="https://tabelog.com/shizuoka/A2205/A220502/22001229/" target="_blank">和食処 こばやし</a></td>
+              <td data-label="評分" class="rating">★3.69</td>
+              <td data-label="預算">¥2,000–5,000</td>
+              <td data-label="特色">活魚水槽；日式座敷包廂；精緻海鮮<br><small>公休：週二（5/31週日正常）</small></td>
+              <td data-label="訂位">📞 電話</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="tip">💡 請提前致電預訂 5/31 午餐、4 位。</div>
+      </div>
+
+      <div class="activity">
+        <div class="activity-time">下午</div>
+        <div class="activity-content">
+          <strong>熱海 ACAO FOREST</strong> — 建議 2.5 小時
+          <span class="mapcode">📍 57 097 088*26</span>
+          <ul>
+            <li>12個主題庭園；600種 4000株玫瑰（5–6月盛開）</li>
+            <li>園內巴士接送至山頂，步行下山欣賞相模灣；鞦韆海景拍照點</li>
+            <li>隈研吾設計 COEDA HOUSE 咖啡廳；玫瑰冰淇淋</li>
+            <li>大人 ¥3,000 · 9:00–17:00（最後入園16:00）</li>
+            <li>地址：靜岡縣熱海市上多賀1027-8 &nbsp;<span class="mapcode">🅿 場內免費</span></li>
+            <li>建議提前 Klook / KKday 購票</li>
+          </ul>
+        </div>
+      </div>
+      <div class="activity">
+        <div class="activity-time">下午茶／晚上</div>
+        <div class="activity-content">
+          <strong>熱海商店街 & 人氣甜點</strong>
+          <ul>
+            <li><strong>熱海平和通商店街</strong>──熱海、伊豆、靜岡特產；溫泉饅頭</li>
+            <li><strong>熱海銀座商店街</strong></li>
+            <li><strong>熱海布丁咖啡2號店</strong>──以溫泉澡堂為主題；河馬牛奶瓶；抹茶/草莓/原味焦糖布丁。週末排隊，建議早到。<br>
+              <small>地址：銀座町10-22 · 11:00–18:00 · 從JR熱海站步行約12分</small></li>
+          </ul>
+          <ul>
+            <li>熱海美食甜點10選：<a href="https://japanzerolag.com/?p=16053" target="_blank">japanzerolag.com</a></li>
+            <li>熱海傳統美食：<a href="https://huannntravel.com/atami-traditional-food/" target="_blank">huannntravel.com</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="meal-section">
+        <div class="meal-label">🍽️ May 31 晚餐 ― 熱海 &nbsp;電話訂位 · 4位</div>
+        <table class="rest-table">
+          <thead>
+            <tr><th>#</th><th>餐廳</th><th>評分</th><th>預算/人</th><th>特色</th><th>訂位</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-label="#">1</td>
+              <td data-label="餐廳"><a class="rest-link" href="https://tabelog.com/shizuoka/A2205/A220502/22038943/" target="_blank">熱海おさかな・大食堂</a></td>
+              <td data-label="評分" class="rating">★3.48</td>
+              <td data-label="預算">¥2,000–4,000</td>
+              <td data-label="特色">人氣海鮮食堂；漁獲直送；輕鬆氣氛</td>
+              <td data-label="訂位" class="booking-no">❌ 否</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="tip">💡 請提前致電預訂 5/31 晚餐、4 位。</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ DAY 3 ═══ -->
+  <div id="day3" class="day-block">
+    <div class="day-header">
+      <div class="day-num">3</div>
+      <div>
+        <div class="day-title">伊豆半島火山地貌 → 富士山區</div>
+        <div class="day-date">Jun 1（Monday）</div>
+      </div>
+    </div>
+    <div class="day-body">
+      <div class="activity">
+        <div class="activity-time">超上午</div>
+        <div class="activity-content">
+          <strong>Check Out 熱海 → 出發前往伊豆</strong>
+          <p>預計車程 <strong>約45–60分鐘</strong>（國道135號沿海岸線南下）</p>
+        </div>
+      </div>
+      <div class="activity">
+        <div class="activity-time">上午</div>
+        <div class="activity-content">
+          <strong>一碧湖</strong> — 建議 1.5 小時
+          <span class="mapcode">📍 258 849 157*47 &nbsp;🅿 湖畔免費</span>
+          <ul>
+            <li>約10萬年前火山噴發形成的火口湖；湖周長4公里，繞行約60分鐘</li>
+            <li>一碧湖神社鳥居為熱門拍照景點</li>
+          </ul>
+        </div>
+      </div>
+      <div class="activity">
+        <div class="activity-time">上午（一碧湖後）</div>
+        <div class="activity-content">
+          <strong>城ヶ崎海岸 & 門脇つり橋</strong> — 建議 1 小時
+          <span class="mapcode">📍 488 426 836*58 &nbsp;🅿 門脇駐車場 ¥500/日・123台</span>
+          <ul>
+            <li>約4,000年前<strong>大室山噴發熔岩</strong>形成的斷崖絕壁海岸線，視覺震撼</li>
+            <li>🌉 <strong>門脇つり橋</strong>（全長48m吊橋）+ <strong>門脇埼燈台</strong>，俯瞰太平洋絕景</li>
+            <li>入場<strong>免費</strong> · 燈台 9:00–17:00</li>
+            <li>輕鬆路線：吊橋 + 燈台約40–60分鐘</li>
+          </ul>
+        </div>
+      </div>
+      <div class="activity">
+        <div class="activity-time">中午</div>
+        <div class="activity-content">
+          <strong>大室山</strong> — 建議 1–2 小時
+          <span class="mapcode">📍 488 552 450*84</span>
+          <ul>
+            <li>伊豆高原象徵；纜車往返 ¥1,000（約5分鐘）</li>
+            <li>火山口巡禮步道（1公里，20–30分鐘）；360度眺望富士山+伊豆七島</li>
+            <li>纜車 9:00–17:00 &nbsp;<span class="mapcode">🅿 免費500台</span></li>
+            <li>地址：靜岡縣伊東市池672-2</li>
+            <li>⚠️ <strong>大風時纜車停駛</strong>，後備方案見下方</li>
+          </ul>
+          <div style="margin-top:8px; padding:10px 12px; background:#f0f7f0; border-left:3px solid #5a9a6a; border-radius:4px; font-size:.85rem;">
+            <strong>🌵 後備：伊豆シャボテン動物公園（仙人掌公園）</strong><br>
+            大室山纜車停駛時，步行約 <strong>5 分鐘</strong>即達。<br>
+            <ul style="margin:5px 0 0 0; padding-left:1.2em;">
+              <li>約 1,500 種仙人掌 + 150 種動物；可近距離餵食水豚🦦、羊駝等</li>
+              <li>🎟 入場費：平日 ¥2,700 · 週末/假日 ¥2,800（¥200 折扣憑巴士一日券）</li>
+              <li>⏰ 開放：9:00–17:00（11月–2月至16:00）；全年無休</li>
+              <li>🚌 從伊豆高原駅 巴士約 20 分鐘（¥430）至終點 Shaboten Koen</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="meal-section">
+        <div class="meal-label">🍽️ Jun 1 午餐 ― 伊豆高原（大室山後）&nbsp;電話訂位 · 4位 · 二選一</div>
+        <table class="rest-table">
+          <thead>
+            <tr><th>#</th><th>餐廳</th><th>評分</th><th>預算/人</th><th>特色</th><th>訂位</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-label="#">1</td>
+              <td data-label="餐廳"><a class="rest-link" href="https://tabelog.com/shizuoka/A2205/A220503/22004100/" target="_blank">一鰻（イチウナギ）</a></td>
+              <td data-label="評分" class="rating">★4.04</td>
+              <td data-label="預算">¥6,000–7,999</td>
+              <td data-label="特色">伊豆高原人氣鰻魚專門店<br><small>公休：週二、週三（6/1週一正常）</small></td>
+              <td data-label="訂位">📞 電話</td>
+            </tr>
+            <tr>
+              <td data-label="#">2</td>
+              <td data-label="餐廳"><a class="rest-link" href="https://tabelog.com/shizuoka/A2205/A220503/22003157/" target="_blank">うなぎのまとい</a></td>
+              <td data-label="評分" class="rating">★3.71</td>
+              <td data-label="預算">¥2,000–4,000</td>
+              <td data-label="特色">傳統鰻魚料理<br><small>公休：週二（6/1週一正常）</small></td>
+              <td data-label="訂位">📞 電話</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="tip">💡 建議提前在 Tabelog 預訂 6/1 午餐、4 位。</div>
+      </div>
+
+      <div class="meal-section">
+        <div class="meal-label">🍽️ Jun 1 晚餐 ― 伊豆・熱海 &nbsp;電話訂位 · 4位</div>
+        <table class="rest-table">
+          <thead>
+            <tr><th>#</th><th>餐廳</th><th>評分</th><th>預算/人</th><th>特色</th><th>訂位</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-label="#">1</td>
+              <td data-label="餐廳"><a class="rest-link" href="https://tabelog.com/shizuoka/A2205/A220502/22001046/" target="_blank">漁師家 大次郎丸</a></td>
+              <td data-label="評分" class="rating">★3.61</td>
+              <td data-label="預算">¥3,000–6,000</td>
+              <td data-label="特色">漁師直營；當天捕獲食材<br><small>公休：週二、週三（6/1週一正常）</small></td>
+              <td data-label="訂位">📞 電話</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="tip">💡 請提前致電預訂 6/1 晚餐、4 位。</div>
+      </div>
+
+      <div class="tip" style="margin-top:16px">🚗 晚餐後駕車前往富士山區酒店，預計車程 <strong>約1–1.5小時</strong>（伊豆高原 → 富士吉田）<br>📍 <strong>今晚起入住富士山展望温泉酒店 HOTEL MYSTAYS Fuji Onsen Resort</strong></div>
+    </div>
+  </div>
+
+  <!-- ═══ DAY 4 ═══ -->
+  <div id="day4" class="day-block">
+    <div class="day-header">
+      <div class="day-num">4</div>
+      <div>
+        <div class="day-title">富士山腰 — 新倉山 · 五合目 · 大石公園</div>
+        <div class="day-date">Jun 2（Tuesday）</div>
+      </div>
+    </div>
+    <div class="day-body">
+
+      <div class="bro-join">
+        <h4>✈️ 弟弟今天出發 &nbsp;<span class="bro-badge">獨立行程</span></h4>
+        <ul>
+          <li><strong>12:30</strong>｜由東區醫院搭的士前往香港國際機場</li>
+          <li><strong>15:30</strong>｜乘搭國泰航空飛往東京成田（機票由 Daddy 購買）</li>
+          <li><strong>21:00</strong>｜抵達成田，乘 JR 前往新宿，入住 Athena 安排的新宿酒店（住一晚）</li>
+          <li>⚠️ 記得將酒店地址及入住憑證發給弟弟</li>
+        </ul>
+      </div>
+
+      <div class="activity">
+        <div class="activity-time">早上（早餐後即出發）</div>
+        <div class="activity-content">
+          <strong>新倉山淺間公園 &amp; 新倉富士淺間神社</strong>
+          <span class="mapcode">📍 161 276 580*60 &nbsp;🅿 161 276 706*78（免費，山腳停車場）</span>
+          <ul>
+            <li>🗻 <strong>經典畫面：富士山 ＋ 忠靈塔（五重塔）</strong>明信片視角，展望台拍攝</li>
+            <li>門票：<strong>免費</strong> · 公園24小時開放（建議白天前往，夜間照明不足）</li>
+            <li>自駕：停車場在山腳（免費），<strong>車輛無法直達展望台</strong>，需步行上山</li>
+            <li>步行路線：398階「咲耶姬階梯」或旁邊較平緩坡道，約10–15分鐘登頂</li>
+            <li>地址：〒403-0031 山梨縣富士吉田市淺間 2-4-1（新倉富士淺間神社）</li>
+            <li>從河口湖 IC 開車約15分鐘</li>
+            <li><a href="https://andyventure.com/japan-arakurayama-sengen-park/" target="_blank">▶ 參考攻略</a> &nbsp;·&nbsp; <a href="https://www.arakurafujisengen.com/" target="_blank">▶ 新倉富士淺間神社官網</a> &nbsp;·&nbsp; <a href="https://fujiyoshida.net/zh_TW/see-and-do/12" target="_blank">▶ 富士吉田市觀光（繁中）</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="activity">
+        <div class="activity-time">中午</div>
+        <div class="activity-content">
+          <strong>富士山五合目</strong>
+          <span class="mapcode">📍 312 842 533*03</span>
+          <ul>
+            <li>需繳富士スバルライン通行費 ¥2,800/車 &nbsp;<span class="mapcode">🅿 五合目免費330台</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="meal-section">
+        <div class="meal-label">🍽️ Jun 2 午餐 ― 河口湖 &nbsp;電話訂位 · 4位</div>
+        <table class="rest-table">
+          <thead>
+            <tr><th>#</th><th>餐廳</th><th>評分</th><th>預算/人</th><th>特色</th><th>訂位</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-label="#">1</td>
+              <td data-label="餐廳"><a class="rest-link" href="https://tabelog.com/yamanashi/A1903/A190303/19000183/" target="_blank">もみじ亭</a></td>
+              <td data-label="評分" class="rating">★3.42</td>
+              <td data-label="預算">¥2,000–4,000</td>
+              <td data-label="特色">山梨郷土和食；河口湖近郊；傳統日式套餐</td>
+              <td data-label="訂位">📞 電話</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="tip">💡 請提前致電預訂 6/2 午餐、4 位。</div>
+      </div>
+
+      <div class="activity">
+        <div class="activity-time">下午</div>
+        <div class="activity-content">
+          <strong>河口湖 大石公園</strong>
+          <span class="mapcode">📍 161 247 506*31 &nbsp;🅿 免費24H</span>
+          <ul>
+            <li>350公尺湖岸花步道（春：粉蝶；夏：薰衣草）</li>
+            <li>河口湖自然生活館──富士山紀念品、山梨水果；<strong>薰衣草/藍莓霜淇淋</strong>（季節限定）</li>
+            <li>BRAND NEW DAY 咖啡 · LAKE BAKE 麵包，預留2小時</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="meal-section">
+        <div class="meal-label">🍽️ Jun 2 晚餐 ― 河口湖 &nbsp;電話訂位 · 4位</div>
+        <table class="rest-table">
+          <thead>
+            <tr><th>#</th><th>餐廳</th><th>評分</th><th>預算/人</th><th>特色</th><th>訂位</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-label="#">1</td>
+              <td data-label="餐廳"><a class="rest-link" href="https://tabelog.com/yamanashi/A1903/A190303/19010099/" target="_blank">ほうとう蔵 歩成（ぶなり）河口湖店</a></td>
+              <td data-label="評分" class="rating">★3.51</td>
+              <td data-label="預算">¥1,000–1,999</td>
+              <td data-label="特色">全國ほうとう大賽三連冠；南瓜味噌湯底；麵條彈牙</td>
+              <td data-label="訂位">📞 電話</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="tip">💡 「歩成」三度奪全國大賽冠軍，以南瓜味噌湯底馳名，請提前致電預訂。</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ DAY 5 ═══ -->
+  <div id="day5" class="day-block">
+    <div class="day-header">
+      <div class="day-num">5</div>
+      <div>
+        <div class="day-title">富士五湖 — 忍野八海 · 山中湖 · 花之都公園</div>
+        <div class="day-date">Jun 3（Wednesday）</div>
+      </div>
+    </div>
+    <div class="day-body">
+
+      <div class="bro-join">
+        <h4>🛬 弟弟抵達 &nbsp;<span class="bro-badge">中途加入</span></h4>
+        <ul>
+          <li><strong>09:30–10:00</strong>｜弟弟乘「富士回遊」直達列車由新宿出發，抵達 <strong>河口湖車站</strong>，大家前往接機匯合 🎉</li>
+          <li>昨晚（Jun 2）弟弟獨自飛抵成田（CX，15:30起飛），入住新宿酒店（由 Athena 安排）</li>
+          <li>早上 07:30 於新宿站乘富士回遊（媽咪預購指定席票，記得將 QR Code 發給弟弟）</li>
+          <li>⚠️ 富士回遊為全車指定席，必須持票才可上車</li>
+          <li>⚠️ 新宿站較大，建議叫弟弟提早 15–20 分鐘到月台</li>
+          <li>🏨 <strong>今晚弟弟住宿</strong>｜HOTEL MYSTAYS Fuji Onsen Resort · Standard Double · Booking <strong>2011710359</strong>（Check-in 15:00）</li>
+        </ul>
+      </div>
+
+      <div class="activity">
+        <div class="activity-time">上午</div>
+        <div class="activity-content">
+          <strong>忍野八海</strong>
+          <span class="mapcode">📍 312 612 330*04 &nbsp;🅿 大林駐車場 161 160 042*44（¥300/次，120台）</span>
+        </div>
+      </div>
+
+      <div class="activity">
+        <div class="activity-time">下午</div>
+        <div class="activity-content">
+          <strong>山中湖 花之都公園</strong>
+          <span class="mapcode">📍 312 476 880*07</span>
+          <ul>
+            <li>以富士山為背景的大面積花田（4月下旬–5月中旬鬱金香）</li>
+            <li>「清流之鄉」溫室+瀑布 ¥600</li>
+            <li><span class="mapcode">🅿 第1: 161 072 492*64 / 第2: 161 072 823*30</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="meal-section">
+        <div class="meal-label">🍽️ Jun 3 午餐 ― 山中湖 &nbsp;12:30–14:00 · 二選一 · 建議訂窗邊位</div>
+        <table class="rest-table">
+          <thead>
+            <tr><th>#</th><th>餐廳</th><th>評分</th><th>預算/人</th><th>特色</th><th>訂位</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-label="#">1</td>
+              <td data-label="餐廳"><a class="rest-link" href="https://tabelog.com/yamanashi/A1903/A190302/19010672/" target="_blank">ザ パーク 山中湖店（THE PARK）</a></td>
+              <td data-label="評分" class="rating">★3.45</td>
+              <td data-label="預算">¥1,000–1,999</td>
+              <td data-label="特色">落地窗直望山中湖+富士山；招牌舒芙蕾鬆餅</td>
+              <td data-label="訂位">📞/Walk-in</td>
+            </tr>
+            <tr>
+              <td data-label="#">2</td>
+              <td data-label="餐廳"><a class="rest-link" href="https://tabelog.com/yamanashi/A1903/A190302/19013494/" target="_blank">ZEIT BAKERY CAFÉ</a></td>
+              <td data-label="評分" class="rating">★3.48</td>
+              <td data-label="預算">¥1,000–1,999</td>
+              <td data-label="特色">2024新開業；早午餐+現烤麵包；寬敞戶外空間<br><small>公休：週四（6/3週三正常）</small></td>
+              <td data-label="訂位">📞/Walk-in</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="tip">💡 「THE PARK」落地窗直望山中湖與富士山，舒芙蕾鬆餅必點，建議提前訂位。</div>
+      </div>
+
+      <div class="activity">
+        <div class="activity-time">下午</div>
+        <div class="activity-content">
+          <strong>🚲 山中湖北岸單車遊 ― 逆富士絕景精華段（約 5.5 km）</strong>
+          <ul>
+            <li><strong>路線：</strong>山中湖交流廣場「きらら」(Kirara) 出發 → <strong>長池親水公園</strong> → 白鳥濱（全程平坦，與汽車完全分流）</li>
+            <li>此段正對富士山，景觀全程開闊，是拍攝「<strong>逆富士</strong>」及「鑽石富士」的經典地帶</li>
+            <li>💡 <strong>長池親水公園</strong> 是最推薦停靠點，可飽覽完全無遮蔽的富士山全景</li>
+            <li>租車：<a class="rest-link" href="https://lake-yamanakako.com/spot/10259" target="_blank">Yamanakako Cycling Base（DALLAS VILLAGE 內）</a> 或北岸各租車點</li>
+          </ul>
+        </div>
+      </div>
+      <div class="activity">
+        <div class="activity-time">下午</div>
+        <div class="activity-content">
+          <strong>山中湖環湖 & 逆富士絕景</strong>
+          <ul>
+            <li>山中諏訪神社附近沿平坦環湖步道</li>
+            <li>長池親水公園──「逆富士」倒影絕佳點 <span class="mapcode">📍 312 509 338*03 &nbsp;🅿 312 150 687*06（免費60台）</span></li>
+            <li>南岸「旭日丘湖畔綠地公園」清幽散步</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="meal-section">
+        <div class="meal-label">🍽️ Jun 3 晚餐 ― 河口湖駅</div>
+        <table class="rest-table">
+          <thead>
+            <tr><th>#</th><th>餐廳</th><th>評分</th><th>預算/人</th><th>特色</th><th>訂位</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-label="#">1</td>
+              <td data-label="餐廳"><a class="rest-link" href="https://tabelog.com/yamanashi/A1903/A190303/19013531/" target="_blank">牛かつ専門店 甲州家</a></td>
+              <td data-label="評分" class="rating">★3.20</td>
+              <td data-label="預算">¥1,500–3,000</td>
+              <td data-label="特色">山梨縣特色炸牛排丼；河口湖駅步行可達</td>
+              <td data-label="訂位">📞 電話</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="tip">💡 河口湖駅附近，請提前致電預訂 6/3 晚餐、4 位。</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ DAY 6 ═══ -->
+  <div id="day6" class="day-block">
+    <div class="day-header">
+      <div class="day-num">6</div>
+      <div>
+        <div class="day-title">抵達東京 · 還車 · 新宿御苑 · 歌舞伎町 Tower</div>
+        <div class="day-date">Jun 4（Thursday）</div>
+      </div>
+    </div>
+    <div class="day-body">
+      <div class="activity">
+        <div class="activity-time">08:00–09:00</div>
+        <div class="activity-content">
+          <strong>起身・早餐・Check Out・出發駛往東京</strong>
+          <p>預計車程 <strong>約2–2.5小時</strong>（富士吉田 → 銀座，中央自動車道 · 約120km）</p>
+        </div>
+      </div>
+      <div class="activity">
+        <div class="activity-time">11:30–12:00</div>
+        <div class="activity-content">
+          <strong>Check In：HOTEL MUSSE GINZA MEITETSU 銀座名鉄</strong>
+          <p>先駕車至銀座 Check In 及寄存行李</p>
+        </div>
+      </div>
+      <div class="activity">
+        <div class="activity-time">12:00–13:00</div>
+        <div class="activity-content">
+          <strong>駕車前往新宿，還車：Nissan Rent a Car 新宿站西口</strong>
+          <p>預計車程 <strong>約30–45分鐘</strong>（銀座 → 新宿，市區行車）</p>
+          <p><small>東京都新宿区西新宿一丁目西口地下街１号 小田急ACE南館B1F &nbsp;·&nbsp; 還車時間：16:00 前 &nbsp;·&nbsp; 📞 03-3347-4123</small></p>
+        </div>
+      </div>
+
+      <div class="meal-section">
+        <div class="meal-label">🍽️ Jun 4 午餐 ― 新宿（還車後）&nbsp;13:00–14:30</div>
+        <table class="rest-table">
+          <thead>
+            <tr><th>#</th><th>餐廳</th><th>評分</th><th>人均</th><th>類型</th><th>特色</th><th>訂位</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-label="#">1</td>
+              <td data-label="餐廳"><a class="rest-link" href="https://tabelog.com/tokyo/A1304/A130401/13239102/" target="_blank">新宿うなてつ はなれ Unatetsu Hanare</a></td>
+              <td data-label="評分" class="rating">★3.57</td>
+              <td data-label="人均">¥4,000–5,000</td>
+              <td data-label="類型">鰻・懐石</td>
+              <td data-label="特色">60年老店；炭燒鰻魚串・鰻重；西武新宿駅徒步1分</td>
+              <td data-label="訂位" class="booking-yes">✅ 可</td>
+            </tr>
+            <tr>
+              <td data-label="#">2</td>
+              <td data-label="餐廳"><a class="rest-link" href="https://tabelog.com/tokyo/A1304/A130401/13109377/" target="_blank">韓国料理スランジェ 新宿店</a></td>
+              <td data-label="評分" class="rating">3.47</td>
+              <td data-label="人均">¥2,000–3,000</td>
+              <td data-label="類型">韓国宮廷料理</td>
+              <td data-label="特色">韓式風味料理；高島屋13F；更名後菜單更新；家庭友善</td>
+              <td data-label="訂位" class="booking-yes">✅ 可</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="tip">💡 「割烹さかい」需極早訂位（1–2個月前）。</div>
+      </div>
+
+      <div class="activity">
+        <div class="activity-time">14:30–16:30</div>
+        <div class="activity-content">
+          <strong>新宿御苑</strong> &nbsp;<a class="rest-link" href="https://maps.google.com/?q=%E6%96%B0%E5%AE%BF%E5%BE%A1%E8%8B%91" target="_blank">🗺 Google Maps</a>
+          <ul>
+            <li>從新宿站步行10–15分鐘，或搭丸之內線至「新宿御苑前站」</li>
+            <li>日式+英式庭園，午後散步 2 小時；⚠️ 星期一休園</li>
+          </ul>
+        </div>
+      </div>
+      <div class="activity">
+        <div class="activity-time">16:30–17:30</div>
+        <div class="activity-content">
+          <strong>新宿車站一帶 ― 西口地標 & 昭和情懷</strong>
+          <ul>
+            <li>🏛️ <strong>東京都庁 展望台（免費）</strong>｜45F 無料南展望台，俯瞰整個新宿＋遠眺富士山；開至 22:30（週三、五至 21:00）；步行約 10 分鐘 &nbsp;<a class="rest-link" href="https://maps.google.com/?q=%E6%9D%B1%E4%BA%AC%E9%83%BD%E5%BA%81" target="_blank">🗺 Maps</a></li>
+            <li>🍢 <strong>思い出横丁（Memory Lane）</strong>｜西口出站即達；30 間迷你烤串居酒屋並排，昭和煙霧感十足，傍晚最有氣氛，也適合拍照打卡 &nbsp;<a class="rest-link" href="https://maps.google.com/?q=%E6%80%9D%E3%81%84%E5%87%BA%E6%A8%AA%E4%B8%81" target="_blank">🗺 Maps</a></li>
+            <li>🏬 <strong>新宿西口廣場 / Yodobashi Camera 總本店</strong>｜亞洲最大家電店，7 層樓；順路掃貨電器、藥妝</li>
+          </ul>
+        </div>
+      </div>
+      <div class="activity">
+        <div class="activity-time">17:30–18:30</div>
+        <div class="activity-content">
+          <strong>東急歌舞伎町 TOWER + 新宿百貨購物</strong> &nbsp;<a class="rest-link" href="https://maps.google.com/?q=%E6%9D%B1%E6%80%A5%E6%AD%8C%E8%88%9E%E4%BC%8E%E7%94%BA%E3%82%BF%E3%83%AF%E3%83%BC" target="_blank">🗺 Google Maps</a>
+          <ul>
+            <li>2023年開幕地標大樓；2F「新宿歌舞伎 hall」飲食街華麗霓虹打卡</li>
+            <li>新宿 LUMINE <span class="shopper-badge shopper-athena">Athena 購物</span> · 伊勢丹 · 驚安之殿堂 (DONKI)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="meal-section">
+        <div class="meal-label">🍽️ Jun 4 晚餐 ― 新宿（和牛燒肉 / 壽喜燒）&nbsp;18:30–20:00</div>
+        <table class="rest-table">
+          <thead>
+            <tr><th>#</th><th>餐廳</th><th>評分</th><th>人均</th><th>類型</th><th>特色</th><th>訂位</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-label="#">1</td>
+              <td data-label="餐廳"><a class="rest-link" href="https://tabelog.com/tokyo/A1304/A130401/13004274/" target="_blank">人形町今半 新宿高島屋店</a></td>
+              <td data-label="評分" class="rating">★3.52</td>
+              <td data-label="人均">¥8,000–15,000</td>
+              <td data-label="類型">壽喜燒・百年老舖</td>
+              <td data-label="特色">明治28年創業；A5黑毛和牛；高島屋內環境雅致</td>
+              <td data-label="訂位" class="booking-yes">✅ 可</td>
+            </tr>
+            <tr>
+              <td data-label="#">2</td>
+              <td data-label="餐廳"><a class="rest-link" href="https://tabelog.com/tokyo/A1304/A130401/13258565/" target="_blank">焼肉 Ushigoro 新宿三丁目店</a></td>
+              <td data-label="評分" class="rating">★3.65</td>
+              <td data-label="人均">¥10,000–14,999</td>
+              <td data-label="類型">和牛燒肉</td>
+              <td data-label="特色">Tabelog 100 名店；A5黑毛和牛コース；新宿三丁目駅0分；可包廂</td>
+              <td data-label="訂位" class="booking-yes">✅ 可</td>
+            </tr>
+            <tr>
+              <td data-label="#">3</td>
+              <td data-label="餐廳"><a class="rest-link" href="https://tabelog.com/tokyo/A1304/A130401/13210915/" target="_blank">炭火焼ホルモン ぐう 新宿 Guu Shinjuku</a></td>
+              <td data-label="評分" class="rating">★3.59</td>
+              <td data-label="人均">¥4,000–5,000</td>
+              <td data-label="類型">ホルモン焼肉</td>
+              <td data-label="特色">炭火烤新鮮ホルモン・和牛；性價比高；西武新宿駅近</td>
+              <td data-label="訂位" class="booking-yes">✅ 可</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="tip">💡 「人形町今半」是日本最著名壽喜燒品牌，建議2–3週前預訂。偏好燒肉選「Ushigoro」（Tabelog 100 名店，可包廂）；預算較緊選「ぐう」炭火ホルモン，性價比高。</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ DAY 7 ═══ -->
+  <div id="day7" class="day-block">
+    <div class="day-header">
+      <div class="day-num">7</div>
+      <div>
+        <div class="day-title">明治神宮 · 原宿 · 淺草 · 晴空塔 · 表參道 · 澀谷 SHIBUYA SKY</div>
+        <div class="day-date">Jun 5（Friday）</div>
+      </div>
+    </div>
+    <div class="day-body">
+      <div class="activity">
+        <div class="activity-time">09:00–09:15</div>
+        <div class="activity-content">
+          <strong>交通：新宿 → 原宿（JR山手線，約4分鐘）</strong>
+        </div>
+      </div>
+      <div class="activity">
+        <div class="activity-time">09:15–11:15</div>
+        <div class="activity-content">
+          <strong>明治神宮</strong> — 2 小時 &nbsp;<a class="rest-link" href="https://maps.google.com/?q=%E6%98%8E%E6%B2%BB%E7%A5%9E%E5%AE%AE" target="_blank">🗺 Google Maps</a>
+          <ul>
+            <li>碎石參道 · 巨大鳥居 · 酒樽牆 · 正殿參拜 · 挑選御守</li>
+          </ul>
+        </div>
+      </div>
+      <div class="activity">
+        <div class="activity-time">11:15–12:00</div>
+        <div class="activity-content">
+          <strong>東急廣場原宿「ハラカド」（Harakado）</strong> — 45分鐘 &nbsp;<a class="rest-link" href="https://maps.google.com/?q=%E6%9D%B1%E6%80%A5%E3%83%97%E3%83%A9%E3%82%B6%E5%8E%9F%E5%AE%BF+%E3%83%8F%E3%83%A9%E3%82%AB%E3%83%89" target="_blank">🗺 Google Maps</a>
+          <ul>
+            <li>2024年全新開幕；頂層露天綠化露台可俯瞰表參道十字路口</li>
+            <li>文創 / 潮流服飾；明治神宮步行約5分鐘</li>
+          </ul>
+        </div>
+      </div>
+      <div class="activity">
+        <div class="activity-time">12:00–12:35</div>
+        <div class="activity-content">
+          <strong>交通：原宿 → 淺草（銀座線直通，約30分鐘）</strong>
+          <p>表參道駅乘銀座線→淺草駅，免轉車</p>
+        </div>
+      </div>
+      <div class="activity">
+        <div class="activity-time">12:35–13:15</div>
+        <div class="activity-content">
+          <strong>淺草寺 & 仲見世通り</strong>
+          <span class="mapcode">📍 139 776 389*52</span> &nbsp;<a class="rest-link" href="https://maps.google.com/?q=%E6%B5%85%E8%8D%89%E5%AF%BA" target="_blank">🗺 Google Maps</a>
+          <p>雷門・大香爐・參道手信一條街，40分鐘輕鬆遊覽</p>
+        </div>
+      </div>
+
+      <div class="meal-section">
+        <div class="meal-label">🍽️ Jun 5 午餐 ― 淺草 &nbsp;13:15–14:45</div>
+        <table class="rest-table">
+          <thead>
+            <tr><th>#</th><th>餐廳</th><th>評分</th><th>人均</th><th>類型</th><th>特色</th><th>訂位</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-label="#">1</td>
+              <td data-label="餐廳"><a class="rest-link" href="https://tabelog.com/tokyo/A1311/A131102/13003675/" target="_blank">雷門 三定 Kaminarimon Sansada</a></td>
+              <td data-label="評分" class="rating">★3.47</td>
+              <td data-label="人均">¥1,500–3,000</td>
+              <td data-label="類型">天婦羅</td>
+              <td data-label="特色">1837年老舗；天丼¥1,700起；雷門正對面，觀光必吃</td>
+              <td data-label="訂位" class="booking-no">❌ 否</td>
+            </tr>
+            <tr>
+              <td data-label="#">2</td>
+              <td data-label="餐廳"><a class="rest-link" href="https://tabelog.com/tokyo/A1311/A131102/13003714/" target="_blank">尾張屋 本店 Owariaya Honten</a></td>
+              <td data-label="評分" class="rating">★3.49</td>
+              <td data-label="人均">¥1,500–2,500</td>
+              <td data-label="類型">蕎麥麵</td>
+              <td data-label="特色">1860年創業；天婦羅蕎麥麵名店；浅草駅徒步5分</td>
+              <td data-label="訂位" class="booking-yes">✅ 可</td>
+            </tr>
+            <tr>
+              <td data-label="#">3</td>
+              <td data-label="餐廳"><a class="rest-link" href="https://tabelog.com/tokyo/A1311/A131102/13003684/" target="_blank">駒形どぜう 本店 Komagata Dozeu</a></td>
+              <td data-label="評分" class="rating">★3.65</td>
+              <td data-label="人均">¥2,000–3,500</td>
+              <td data-label="類型">泥鰍料理</td>
+              <td data-label="特色">1801年創業；江戶情緒；可邊望晴空塔邊享用泥鰍鍋</td>
+              <td data-label="訂位" class="booking-no">❌ 否</td>
+            </tr>
+            <tr>
+              <td data-label="#">4</td>
+              <td data-label="餐廳"><a class="rest-link" href="https://tabelog.com/tokyo/A1311/A131102/13003689/" target="_blank">鰻 小柳 Unagi Koyanagi</a></td>
+              <td data-label="評分" class="rating">★3.49</td>
+              <td data-label="人均">¥4,000–5,999</td>
+              <td data-label="類型">鰻魚</td>
+              <td data-label="特色">國產鰻魚；午市鰻重實惠；浅草駅徒步5分</td>
+              <td data-label="訂位" class="booking-no">❌ 否</td>
+            </tr>
+            <tr>
+              <td data-label="#">5</td>
+              <td data-label="餐廳"><a class="rest-link" href="https://tabelog.com/tokyo/A1312/A131203/13141252/" target="_blank">備長 ソラマチ店 Hitsumabushi Bincho</a></td>
+              <td data-label="評分" class="rating">★3.47</td>
+              <td data-label="人均">¥4,000–5,999</td>
+              <td data-label="類型">名古屋鰻魚飯</td>
+              <td data-label="特色">晴空塔Solamachi 6F；參觀後即場用餐；無需移動</td>
+              <td data-label="訂位" class="booking-yes">✅ 可</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="tip">💡 「ブノワ」Alain Ducasse旗下法式小館，午市コース性價比遠高於晚市，表參道用餐氣氛佳，建議1–2週前訂位。</div>
+      </div>
+
+      <div class="activity">
+        <div class="activity-time">14:45–16:15</div>
+        <div class="activity-content">
+          <strong>晴空塔・Solamachi</strong> &nbsp;<a class="rest-link" href="https://maps.google.com/?q=Tokyo+Skytree" target="_blank">🗺 Google Maps</a>
+          <ul>
+            <li>天望デッキ ¥2,100（可選購）；或免費逛 Solamachi 商場</li>
+            <li>從淺草寺步行約15分鐘，或搭東武晴空塔線1站</li>
+          </ul>
+        </div>
+      </div>
+      <div class="activity">
+        <div class="activity-time">16:15–17:00</div>
+        <div class="activity-content">
+          <strong>交通：晴空塔 → 表參道（銀座線，約40分鐘）</strong>
+          <p>押上駅→淺草駅→表參道駅，免轉車</p>
+        </div>
+      </div>
+      <div class="activity">
+        <div class="activity-time">17:00–17:45</div>
+        <div class="activity-content">
+          <strong>PORTER OMOTESANDO（表參道店）</strong><span class="shopper-badge shopper-leo">Leo 購物</span>
+          <p>遊覽約45分鐘</p>
+        </div>
+      </div>
+      <div class="activity">
+        <div class="activity-time">17:45–18:15</div>
+        <div class="activity-content">
+          <strong>表參道自由漫步 + Omotesando Hills</strong> &nbsp;<a class="rest-link" href="https://maps.google.com/?q=Omotesando+Hills" target="_blank">🗺 Google Maps</a>
+          <ul>
+            <li>沿途逛 Omotesando Hills（下沉式中庭）；步行至澀谷約15分鐘</li>
+          </ul>
+        </div>
+      </div>
+      <div class="activity">
+        <div class="activity-time">18:15–18:30</div>
+        <div class="activity-content">
+          <strong>交通：表參道 → 澀谷（步行約15分鐘）</strong>
+        </div>
+      </div>
+      <div class="activity">
+        <div class="activity-time">18:30–19:30</div>
+        <div class="activity-content">
+          <strong>澀谷 SHIBUYA SKY 🌆</strong> &nbsp;<a class="rest-link" href="https://maps.google.com/?q=SHIBUYA+SKY" target="_blank">🗺 Google Maps</a>
+          <ul>
+            <li>入場建議 <strong>18:30–19:00</strong>（6月日落約19:00，黃昏至夜景交替最美）</li>
+            <li>澀谷 Scramble Square 45F 至 46F 屋頂展望台；360度無遮擋夜景</li>
+            <li>⏳ 等媽媽購票，TBC</li>
+          </ul>
+        </div>
+      </div>
+      <div class="activity">
+        <div class="activity-time">19:30–20:15</div>
+        <div class="activity-content">
+          <strong>Majestic Legon SHIBUYA109 購物</strong><span class="shopper-badge shopper-athena">Athena 購物</span>
+        </div>
+      </div>
+
+      <div class="meal-section">
+        <div class="meal-label">🍽️ Jun 5 晚餐 ― 澀谷 MIYASHITA PARK 一帶 &nbsp;20:15–21:30</div>
+        <table class="rest-table">
+          <thead>
+            <tr><th>#</th><th>餐廳</th><th>評分</th><th>人均</th><th>類型</th><th>特色</th><th>訂位</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-label="#">★</td>
+              <td data-label="餐廳"><a class="rest-link" href="https://tabelog.com/tokyo/A1312/A131203/13229809/" target="_blank">魚真 Uomasa</a> <span style="background:#e67e22;color:#fff;font-size:.7rem;padding:1px 5px;border-radius:3px;font-weight:700;">Ivan 推薦</span></td>
+              <td data-label="評分" class="rating">★3.52</td>
+              <td data-label="人均">¥2,000–3,999</td>
+              <td data-label="類型">居酒屋・海鮮</td>
+              <td data-label="特色">超新鮮刺身平靚正；鐘ヶ淵駅徒步10秒（晴空塔後搭2站，8分鐘即達）；⚠️ 現金 only；16:00開門</td>
+              <td data-label="訂位" class="booking-yes">✅ 可</td>
+            </tr>
+            <tr>
+              <td data-label="#">1</td>
+              <td data-label="餐廳"><a class="rest-link" href="https://tabelog.com/tokyo/A1306/A130601/13001284/" target="_blank">原宿餃子楼 Harajuku Gyoza Ro</a></td>
+              <td data-label="評分" class="rating">★3.49</td>
+              <td data-label="人均">¥1,500–2,500</td>
+              <td data-label="類型">餃子・中華</td>
+              <td data-label="特色">1970年代老舗排隊名店；煎餃絕品；⚠️ 現金 only</td>
+              <td data-label="訂位 booking-no">❌ 否</td>
+            </tr>
+            <tr>
+              <td data-label="#">2</td>
+              <td data-label="餐廳"><a class="rest-link" href="https://tabelog.com/tokyo/A1303/A130301/13257261/" target="_blank">挽肉と米 渋谷 Hikiniku to Kome</a></td>
+              <td data-label="評分" class="rating">★3.72</td>
+              <td data-label="人均">¥1,500–2,500</td>
+              <td data-label="類型">和牛漢堡排</td>
+              <td data-label="特色">Tabelog 100 名店；現磨和牛漢堡排配特製米飯；休閒；澀谷駅徒步5分</td>
+              <td data-label="訂位" class="booking-no">❌ 否</td>
+            </tr>
+            <tr>
+              <td data-label="#">3</td>
+              <td data-label="餐廳"><a class="rest-link" href="https://tabelog.com/tokyo/A1306/A130601/13245475/" target="_blank">EATALY 原宿 Harajuku</a></td>
+              <td data-label="評分" class="rating">★3.44</td>
+              <td data-label="人均">¥3,000–5,000</td>
+              <td data-label="類型">義大利料理</td>
+              <td data-label="特色">正宗義大利食材；パスタ・ピザ；明治神宮前駅徒步3分</td>
+              <td data-label="訂位" class="booking-yes">✅ 可</td>
+            </tr>
+            <tr>
+              <td data-label="#">4</td>
+              <td data-label="餐廳"><a class="rest-link" href="https://tabelog.com/tokyo/A1303/A130301/13240449/" target="_blank">焼肉KINTAN 渋谷PARCO店 Kintan</a></td>
+              <td data-label="評分" class="rating">★3.48</td>
+              <td data-label="人均">¥6,000–8,000</td>
+              <td data-label="類型">和牛燒肉</td>
+              <td data-label="特色">澀谷PARCO 7F；和牛精選コース；可包廂；澀谷駅徒步5分</td>
+              <td data-label="訂位" class="booking-yes">✅ 可</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="tip">💡 「焼肉KINTAN」在澀谷PARCO 7F，和牛品質穩定，4人同行首選。飯後可在宮下公園空中走廊欣賞澀谷夜景。</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ DAY 9 ═══ -->
+  <div id="day8" class="day-block">
+    <div class="day-header">
+      <div class="day-num">8</div>
+      <div>
+        <div class="day-title">台場 · 麻布台 Hills · 東京鐵塔 · 銀座</div>
+        <div class="day-date">Jun 6（Saturday）</div>
+      </div>
+    </div>
+    <div class="day-body">
+      <div class="activity">
+        <div class="activity-time">09:00–09:45</div>
+        <div class="activity-content">
+          <strong>交通：新宿 → 東京電訊站（Tokyo Teleport）</strong>
+          <p>搭埼京線/臨海線，約25分鐘，免轉車</p>
+        </div>
+      </div>
+      <div class="activity">
+        <div class="activity-time">09:45–12:15</div>
+        <div class="activity-content">
+          <strong>台場海濱公園 & DiverCity（高達）</strong> — 2.5 小時
+          <ul>
+            <li>海岸線散步──自由女神像 + 彩虹大橋景觀 &nbsp;<a class="rest-link" href="https://maps.google.com/?q=%E5%8F%B0%E5%A0%B4%E6%B5%B7%E6%BF%B1%E5%85%AC%E5%9C%92" target="_blank">🗺 Maps</a></li>
+            <li>DiverCity──實物大獨角獸高達 &nbsp;<a class="rest-link" href="https://maps.google.com/?q=DiverCity+Tokyo+Plaza" target="_blank">🗺 Maps</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="meal-section">
+        <div class="meal-label">🍽️ Jun 6 午餐 ― 麻布台・六本木 &nbsp;12:15–13:45</div>
+        <table class="rest-table">
+          <thead>
+            <tr><th>#</th><th>餐廳</th><th>評分</th><th>人均</th><th>類型</th><th>特色</th><th>訂位</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-label="#">1</td>
+              <td data-label="餐廳"><a class="rest-link" href="https://tabelog.com/tokyo/A1307/A130702/13004546/" target="_blank">麻布 川上庵 Azabu Kawakami-an</a></td>
+              <td data-label="評分" class="rating">★3.52</td>
+              <td data-label="人均">¥1,800–3,000</td>
+              <td data-label="類型">蕎麥麵</td>
+              <td data-label="特色">老舗蕎麥麵・天婦羅；天せいろ人氣；麻布台Hills徒步可達</td>
+              <td data-label="訂位" class="booking-yes">✅ 可</td>
+            </tr>
+            <tr>
+              <td data-label="#">2</td>
+              <td data-label="餐廳"><a class="rest-link" href="https://tabelog.com/tokyo/A1308/A130801/13308723/" target="_blank">天茂 Tenmo</a></td>
+              <td data-label="評分" class="rating">★3.57</td>
+              <td data-label="人均">¥1,400–2,500</td>
+              <td data-label="類型">天婦羅</td>
+              <td data-label="特色">1964年創業；炸天丼¥1,400起；赤坂駅徒步5分；超值老舗</td>
+              <td data-label="訂位" class="booking-yes">✅ 可</td>
+            </tr>
+            <tr>
+              <td data-label="#">3</td>
+              <td data-label="餐廳"><a class="rest-link" href="https://tabelog.com/tokyo/A1307/A130702/13001659/" target="_blank">登龍 麻布店 Toryu Azabu</a></td>
+              <td data-label="評分" class="rating">★3.66</td>
+              <td data-label="人均">¥1,500–3,000</td>
+              <td data-label="類型">中華料理</td>
+              <td data-label="特色">老舗高級中華；招牌煎餃；麻布十番駅徒步2分</td>
+              <td data-label="訂位" class="booking-yes">✅ 可</td>
+            </tr>
+            <tr>
+              <td data-label="#">4</td>
+              <td data-label="餐廳"><a class="rest-link" href="https://tabelog.com/tokyo/A1307/A130701/13230170/" target="_blank">焼肉冷麺 ユッチャン Yuchan</a></td>
+              <td data-label="評分" class="rating">★3.66</td>
+              <td data-label="人均">¥1,500–2,500</td>
+              <td data-label="類型">韓式燒肉</td>
+              <td data-label="特色">燒肉百名店；冷麵套餐¥1,500起；六本木駅徒步3分</td>
+              <td data-label="訂位" class="booking-yes">✅ 可</td>
+            </tr>
+            <tr>
+              <td data-label="#">5</td>
+              <td data-label="餐廳"><a class="rest-link" href="https://tabelog.com/tokyo/A1307/A130701/13033082/" target="_blank">BRASSERIE PAUL BOCUSE Le Musée</a></td>
+              <td data-label="評分" class="rating">★3.53</td>
+              <td data-label="人均">¥2,200–3,500</td>
+              <td data-label="類型">法式</td>
+              <td data-label="特色">國立新美術館內；午市套餐¥2,200起；氣氛佳</td>
+              <td data-label="訂位" class="booking-yes">✅ 可</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="tip">💡 「bills」台場最具氣氛午餐，Ricotta鬆餅配彩虹橋海景，建議提前訂位。</div>
+      </div>
+
+      <div class="activity">
+        <div class="activity-time">13:45–14:30</div>
+        <div class="activity-content"><strong>交通：前往神谷町 / 六本木區</strong></div>
+      </div>
+      <div class="activity">
+        <div class="activity-time">14:30–16:30</div>
+        <div class="activity-content">
+          <strong>麻布台 Hills（Azabudai Hills）</strong> &nbsp;<a class="rest-link" href="https://maps.google.com/?q=Azabudai+Hills+Tokyo" target="_blank">🗺 Google Maps</a>
+          <ul>
+            <li>日本第一高樓超級複合體；未來感建築設計</li>
+            <li>精品名牌 · % Arabica · 室內景觀</li>
+            <li>東京鐵塔就在旁邊，遊覽完步行即達 🗼</li>
+          </ul>
+        </div>
+      </div>
+      <div class="activity">
+        <div class="activity-time">16:30–18:30</div>
+        <div class="activity-content">
+          <strong>東京鐵塔夜景（Tokyo Tower）🗼</strong>
+          <span class="mapcode">📍 682 061*15</span> &nbsp;<a class="rest-link" href="https://maps.google.com/?q=Tokyo+Tower" target="_blank">🗺 Google Maps</a>
+          <ul>
+            <li>從麻布台Hills步行約 <strong>8–10分鐘</strong>；約 <strong>5pm</strong> 入場，黃昏至夜景交替時段最美</li>
+            <li>Main Deck ¥1,500 · 開至23:00</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="meal-section">
+        <div class="meal-label">🍽️ Jun 6 晚餐 ― 六本木・麻布台 &nbsp;18:30–20:00</div>
+        <table class="rest-table">
+          <thead>
+            <tr><th>#</th><th>餐廳</th><th>評分</th><th>人均</th><th>類型</th><th>特色</th><th>訂位</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-label="#">1</td>
+              <td data-label="餐廳"><a class="rest-link" href="https://tabelog.com/tokyo/A1307/A130701/13264260/" target="_blank">Iruka TOKYO 六本木</a></td>
+              <td data-label="評分" class="rating">★3.79</td>
+              <td data-label="人均">¥2,000–3,000</td>
+              <td data-label="類型">創意拉麵</td>
+              <td data-label="特色">米其林指南收錄；貝湯拉麵絕品；六本木駅徒步5分</td>
+              <td data-label="訂位" class="booking-no">❌ 否</td>
+            </tr>
+            <tr>
+              <td data-label="#">2</td>
+              <td data-label="餐廳"><a class="rest-link" href="https://tabelog.com/tokyo/A1307/A130701/13230170/" target="_blank">焼肉冷麺 ユッチャン Yuchan</a></td>
+              <td data-label="評分" class="rating">★3.66</td>
+              <td data-label="人均">¥8,000–9,999</td>
+              <td data-label="類型">韓式燒肉</td>
+              <td data-label="特色">燒肉百名店；晚市菜式更豐富；六本木駅徒步3分</td>
+              <td data-label="訂位" class="booking-yes">✅ 可</td>
+            </tr>
+            <tr>
+              <td data-label="#">3</td>
+              <td data-label="餐廳"><a class="rest-link" href="https://tabelog.com/tokyo/A1307/A130704/13291567/" target="_blank">希須林 麻布台 Kishilin Azabudai</a></td>
+              <td data-label="評分" class="rating">★3.52</td>
+              <td data-label="人均">¥4,000–6,000</td>
+              <td data-label="類型">中華料理</td>
+              <td data-label="特色">担々麵・北京烤鴨；麻布台Hills內；東京鐵塔後步行可達</td>
+              <td data-label="訂位" class="booking-yes">✅ 可</td>
+            </tr>
+            <tr>
+              <td data-label="#">4</td>
+              <td data-label="餐廳"><a class="rest-link" href="https://tabelog.com/tokyo/A1307/A130701/13303752/" target="_blank">麻布台 粋 稲葉 Sui Inaba</a></td>
+              <td data-label="評分" class="rating">★3.56</td>
+              <td data-label="人均">¥5,000–6,000</td>
+              <td data-label="類型">割烹料理</td>
+              <td data-label="特色">季節割烹；吧台座位；六本木一丁目徒步3分；當日預約可嘗試</td>
+              <td data-label="訂位" class="booking-yes">✅ 可</td>
+            </tr>
+            <tr>
+              <td data-label="#">5</td>
+              <td data-label="餐廳"><a class="rest-link" href="https://tabelog.com/tokyo/A1307/A130701/13033082/" target="_blank">BRASSERIE PAUL BOCUSE Le Musée</a></td>
+              <td data-label="評分" class="rating">★3.53</td>
+              <td data-label="人均">¥4,000–6,000</td>
+              <td data-label="類型">法式</td>
+              <td data-label="特色">晚市氛圍更佳；美術館景觀；六本木駅徒步5分</td>
+              <td data-label="訂位" class="booking-yes">✅ 可</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="tip">💡 「天ぷら近藤」是東京最高分天婦羅之一，蔬菜天婦羅著名。若訂不到，「銀座ちかみつ」是近年焼肉百名店新星。</div>
+      </div>
+
+      <div class="activity">
+        <div class="activity-time">20:00–21:00</div>
+        <div class="activity-content">
+          <strong>銀座潮流購物</strong>
+          <p>GINZA SIX · 全日本最大UNIQLO/GU旗艦店；之後搭丸之內線返新宿</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══ DAY 8 ═══ -->
+  <div id="day9" class="day-block">
+    <div class="day-header">
+      <div class="day-num">9</div>
+      <div>
+        <div class="day-title">買手信 · 午餐 · 成田機場 · 回港</div>
+        <div class="day-date">Jun 7（Sunday）</div>
+      </div>
+    </div>
+    <div class="day-body">
+      <div class="activity">
+        <div class="activity-time">08:00–09:00</div>
+        <div class="activity-content">
+          <strong>早餐・Check Out・行李寄存・09:00 出發</strong>
+        </div>
+      </div>
+      <div class="activity">
+        <div class="activity-time">09:00–12:00</div>
+        <div class="activity-content">
+          <strong>最後衝刺：買手信 & 購物（新宿）</strong>
+          <ul>
+            <li>新宿高島屋 / 伊勢丹 地下食品街──高級和菓子 / 西式甜點 &nbsp;<a class="rest-link" href="https://maps.google.com/?q=%E6%96%B0%E5%AE%BF%E9%AB%98%E5%B3%B6%E5%B1%8B" target="_blank">🗺 高島屋</a> &nbsp;<a class="rest-link" href="https://maps.google.com/?q=%E4%BC%8A%E5%8B%A2%E4%B8%B9%E6%96%B0%E5%AE%BF%E5%BA%97" target="_blank">🗺 伊勢丹</a></li>
+            <li>新宿驚安之殿堂 (DONKI)──藥妝及零食 &nbsp;<a class="rest-link" href="https://maps.google.com/?q=%E3%83%89%E3%83%B3%E3%83%BB%E3%82%AD%E3%83%9B%E3%83%BC%E3%83%86+%E6%96%B0%E5%AE%BF%E6%9D%B1%E5%8F%A3%E5%BA%97" target="_blank">🗺 Maps</a></li>
+            <li><em>備用：東京車站一番街（JR中央線，14分鐘）</em></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="meal-section">
+        <div class="meal-label">🍽️ Jun 7 午餐 ― 新宿（日本最後一餐）&nbsp;12:00–13:30</div>
+        <table class="rest-table">
+          <thead>
+            <tr><th>#</th><th>餐廳</th><th>評分</th><th>人均</th><th>類型</th><th>特色</th><th>訂位</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-label="#">1</td>
+              <td data-label="餐廳"><a class="rest-link" href="https://tabelog.com/tokyo/A1304/A130401/13000859/" target="_blank">天ぷら新宿つな八 総本店</a></td>
+              <td data-label="評分" class="rating">★3.46</td>
+              <td data-label="人均">¥2,000–3,000</td>
+              <td data-label="類型">天婦羅・百年老舖</td>
+              <td data-label="特色">大正13年（1924）創業；天婦羅定食¥2,000起；新宿三丁目駅徒步1分</td>
+              <td data-label="訂位" class="booking-yes">✅ 可</td>
+            </tr>
+            <tr>
+              <td data-label="#">2</td>
+              <td data-label="餐廳"><a class="rest-link" href="https://tabelog.com/tokyo/A1304/A130401/13044091/" target="_blank">風雲児 新宿本店 Fuunji</a></td>
+              <td data-label="評分" class="rating">★3.76</td>
+              <td data-label="人均">¥1,000–2,000</td>
+              <td data-label="類型">拉麵・つけ麺</td>
+              <td data-label="特色">Tabelog 100 名店；濃厚つけ麺・醬油拉麵；新宿駅徒步5分；日曜営業</td>
+              <td data-label="訂位" class="booking-no">❌ 否</td>
+            </tr>
+            <tr>
+              <td data-label="#">3</td>
+              <td data-label="餐廳"><a class="rest-link" href="https://tabelog.com/tokyo/A1304/A130401/13024799/" target="_blank">つるとんたん 新宿 Tsurutontan</a></td>
+              <td data-label="評分" class="rating">★3.44</td>
+              <td data-label="人均">¥1,500–2,500</td>
+              <td data-label="類型">烏冬</td>
+              <td data-label="特色">特大烏冬碗；帶行李也容易入座；新宿駅徒步5分</td>
+              <td data-label="訂位" class="booking-yes">✅ 可</td>
+            </tr>
+            <tr>
+              <td data-label="#">4</td>
+              <td data-label="餐廳"><a class="rest-link" href="https://tabelog.com/tokyo/A1304/A130401/13135215/" target="_blank">きづなすし 新宿歌舞伎町店 Kizuna Sushi</a></td>
+              <td data-label="評分" class="rating">★3.48</td>
+              <td data-label="人均">¥4,000–5,000</td>
+              <td data-label="類型">壽司</td>
+              <td data-label="特色">人氣壽司；100款以上；歌舞伎町；日曜営業</td>
+              <td data-label="訂位" class="booking-yes">✅ 可</td>
+            </tr>
+            <tr>
+              <td data-label="#">5</td>
+              <td data-label="餐廳"><a class="rest-link" href="https://tabelog.com/tokyo/A1304/A130401/13000860/" target="_blank">王ろじ Oroji Shinjuku</a></td>
+              <td data-label="評分" class="rating">★3.49</td>
+              <td data-label="人均">¥1,500–2,500</td>
+              <td data-label="類型">炸豬排</td>
+              <td data-label="特色">昭和創業名店；招牌ロース三枚；新宿三丁目駅近；⚠️ 日曜日仅午餐（11:15–14:30）</td>
+              <td data-label="訂位 booking-no">❌ 否</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="tip">💡 「つな八」百年老牌天婦羅，容易訂位，天婦羅定食約¥1,500–2,000，快而美味。「風雲児」為拉麵百名店，つけ麺濃郁，日曜日正常營業。「王ろじ」為昭和名店，注意日曜日僅午市（11:15–14:30），宜早去。</div>
+      </div>
+
+      <div class="activity">
+        <div class="activity-time">13:30–13:45</div>
+        <div class="activity-content">
+          <strong>步行返回酒店取行李，準備前往車站</strong>
+        </div>
+      </div>
+      <div class="activity">
+        <div class="activity-time">13:45–15:10</div>
+        <div class="activity-content">
+          <strong>交通：酒店 → 成田機場</strong>
+          <ul>
+            <li>Narita Express (N'EX) 直達成田 T2（約1小時20分鐘）</li>
+            <li>或新宿西口搭利木津機場巴士 (Limousine Bus)（約1.5–2小時）</li>
+          </ul>
+        </div>
+      </div>
+      <div class="activity">
+        <div class="activity-time">15:10</div>
+        <div class="activity-content">
+          <strong>抵達成田機場 T2，辦理登機 & 免稅店購物</strong>
+        </div>
+      </div>
+      <div class="activity">
+        <div class="activity-time">17:15 ✈️</div>
+        <div class="activity-content">
+          <strong>CX521 回程香港 &nbsp;｜&nbsp; NRT 17:15 → HKG 21:10</strong>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══ BACKUP ═══ -->
+  <div id="backup">
+    <div class="section-title">⭐ 備用景點建議（銀座酒店車程 45 分鐘內）</div>
+    <div class="backup-grid">
+      <div class="backup-card">
+        <h4>築地外市場 Tsukiji Outer Market</h4>
+        <p>車程約10分鐘。歷史悠久海鮮市場；早餐吃新鮮海產、玉子燒、海膽；價格實惠。</p>
+      </div>
+      <div class="backup-card">
+        <h4>清澄白河 Kiyosumi-Shirakawa</h4>
+        <p>車程約15分鐘。東京精品咖啡天堂，精品獨立咖啡店、時尚選貨店，吸引年輕旅客。</p>
+      </div>
+      <div class="backup-card">
+        <h4>豊洲市場 Toyosu Market ⚠️ 需早上 6am 前到達</h4>
+        <p>車程約20分鐘。新築地市場，可參觀世界級魚類拍賣及頂級海鮮便當。建議預訂導覽團。<br><strong style="color:#c0392b;">⏰ 必須 6am 前到達，否則拍賣已結束、人流散去。</strong></p>
+      </div>
+      <div class="backup-card">
+        <h4>台場 / 御台場 Odaiba</h4>
+        <p>車程約25–30分鐘。海濱廣闊；自由女神像打卡；TeamLab；DiverCity電訊天堆；適合家庭。</p>
+      </div>
+      <div class="backup-card">
+        <h4>上野公園 / 上野 Ueno</h4>
+        <p>車程約20–25分鐘。集結多間博物館；上野阿美橫街；5月花卉盛開，美不勝收。<br>🐼 公園旁邊有<strong>上野動物園</strong>（日本最古老動物園，有大熊貓）。</p>
+      </div>
+      <div class="backup-card">
+        <h4>虎之門之丘 Toranomon Hills</h4>
+        <p>車程約15–20分鐘。東京新興時尚地標；精品餐廳及輕食；現代藝術展覽。</p>
+      </div>
+      <div class="backup-card">
+        <h4>天王洲アイル Tennoz Isle</h4>
+        <p>車程約20–25分鐘。東京新興藝術區；河道兩旁大型裝置藝術、畫廊及小店；適合打卡散步。</p>
+      </div>
+      <div class="backup-card">
+        <h4>淺草 Asakusa</h4>
+        <p>車程約20–25分鐘。淺草寺 · 仲見世通 · 歷史舊區；感受歷史民情。</p>
+      </div>
+      <div class="backup-card">
+        <h4>teamLab Planets（豊洲）</h4>
+        <p>車程約20–25分鐘。沉浸式數位藝術館，光影滿溢，打卡感極佳。建議提前線上購票。</p>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /container -->
+
+<footer style="background:var(--dark);color:rgba(255,255,255,.5);text-align:center;padding:20px;font-size:.78rem;">
+  富士山・東京自駕遊 2026 &nbsp;·&nbsp; 私人行程文件
+</footer>
+
+<!-- 特色 Modal -->
+<div id="tokushoku-modal" onclick="this.classList.remove('open');this.style.display='none';" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:2000;align-items:center;justify-content:center;">
+  <div onclick="event.stopPropagation()" style="background:#fff;border-radius:12px;padding:22px 20px 18px;max-width:82vw;min-width:240px;position:relative;box-shadow:0 8px 32px rgba(0,0,0,.25);">
+    <div style="font-weight:700;font-size:.82rem;color:var(--mid);text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px;">特色</div>
+    <div id="tokushoku-modal-text" style="font-size:.9rem;line-height:1.6;color:#333;"></div>
+    <button onclick="document.getElementById('tokushoku-modal').classList.remove('open');document.getElementById('tokushoku-modal').style.display='none';" style="position:absolute;top:10px;right:12px;background:none;border:none;font-size:1.1rem;cursor:pointer;color:#999;line-height:1;">✕</button>
+  </div>
+</div>
+<script>
+(function(){
+  // Inject 特色 button into each restaurant row (mobile only)
+  document.querySelectorAll('.rest-table tbody tr').forEach(function(row){
+    var cell = row.querySelector('td[data-label="特色"]');
+    var nameCell = row.querySelector('td[data-label="餐廳"]');
+    if (!cell || !nameCell) return;
+    var text = cell.textContent.trim();
+    if (!text) return;
+    var btn = document.createElement('button');
+    btn.className = 'tokushoku-btn';
+    btn.textContent = '特色→';
+    btn.setAttribute('data-tokushoku', text);
+    btn.addEventListener('click', function(e){
+      e.preventDefault();
+      document.getElementById('tokushoku-modal-text').textContent = this.getAttribute('data-tokushoku');
+      var modal = document.getElementById('tokushoku-modal');
+      modal.style.display = 'flex';
+      modal.classList.add('open');
+    });
+    nameCell.appendChild(btn);
+  });
+})();
+</script>
+</body>
+</html>
