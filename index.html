@@ -443,8 +443,10 @@
   <a href="#day8"><span class="nav-day">Jun 6</span><span class="nav-sub">台場·鐵塔</span></a>
   <a href="#day9"><span class="nav-day">Jun 7</span><span class="nav-sub">回港</span></a>
   <a href="#backup">備用景點</a>
-  <a href="https://dash.cloudflare.com/0a9c8249f207740e8049524a94f6b162/one/access-controls/policies/a9b3057a-0a75-4b4e-aae4-04aec009b5d9/edit" target="_blank" id="policy-btn" style="display:none; background:#f6821f; color:#fff; border-radius:5px; padding:3px 10px; font-size:.78rem; font-weight:700;">Policy</a>
-  <a href="/cdn-cgi/access/logout" style="background:#4a4a5a; color:#fff; border-radius:5px; padding:3px 10px; font-size:.78rem; font-weight:700;">登出</a>
+  <div style="margin-left:auto;display:flex;align-items:center;gap:6px;padding:0 10px;flex-shrink:0;border-left:1px solid rgba(255,255,255,.12);">
+    <a href="https://dash.cloudflare.com/0a9c8249f207740e8049524a94f6b162/one/access-controls/policies/a9b3057a-0a75-4b4e-aae4-04aec009b5d9/edit" target="_blank" id="policy-btn" style="display:none;background:#f6821f;color:#fff;border-radius:20px;padding:5px 13px;font-size:.7rem;font-weight:700;flex-direction:row;border-bottom:none;line-height:1;white-space:nowrap;text-decoration:none;">Policy</a>
+    <a href="/cdn-cgi/access/logout" style="background:rgba(255,255,255,.1);color:rgba(255,255,255,.8);border-radius:20px;padding:5px 13px;font-size:.7rem;font-weight:600;flex-direction:row;border-bottom:none;line-height:1;white-space:nowrap;border:1px solid rgba(255,255,255,.2);">登出</a>
+  </div>
 </nav>
 <script>
 (function(){
@@ -1530,6 +1532,16 @@
             <tr><th>#</th><th>餐廳</th><th>評分</th><th>人均</th><th>類型</th><th>特色</th><th>訂位</th></tr>
           </thead>
           <tbody>
+            <tr style="background:#f0fff4;">
+              <td data-label="#">★</td>
+              <td data-label="餐廳"><a class="rest-link" href="https://tabelog.com/tokyo/A1314/A131401/13170377/" target="_blank">とんかつ いわい Tonkatsu Iwai</a> <span style="background:#8e44ad;color:#fff;font-size:.7rem;padding:1px 5px;border-radius:3px;font-weight:700;">Athena 推介</span></td>
+              <td data-label="評分" class="rating">★3.93</td>
+              <td data-label="人均">¥2,000–2,999</td>
+              <td data-label="類型">炸豬排</td>
+              <td data-label="特色">Tabelog 最高分炸豬排之一；芝公園・東京鐵塔旁徒步5分；<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> 無訂位，建議 11:30 開門前到達排隊</td>
+              <td data-label="訂位" class="booking-no"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> 現場排隊</td>
+            </tr>
+            <tr><td colspan="7" style="padding:3px 10px;font-size:.72rem;color:#aaa;background:#fafafa;border-bottom:1px solid #eee;">── 後備選擇 ──</td></tr>
             <tr>
               <td data-label="#">1</td>
               <td data-label="餐廳"><a class="rest-link" href="https://tabelog.com/tokyo/A1307/A130702/13004546/" target="_blank">麻布 川上庵 Azabu Kawakami-an</a></td>
@@ -1575,18 +1587,9 @@
               <td data-label="特色">國立新美術館內；午市套餐¥2,200起；氣氛佳</td>
               <td data-label="訂位" class="booking-yes"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Tabelog</td>
             </tr>
-            <tr>
-              <td data-label="#">6</td>
-              <td data-label="餐廳"><a class="rest-link" href="https://tabelog.com/tokyo/A1314/A131401/13170377/" target="_blank">とんかつ いわい Tonkatsu Iwai</a> <span style="background:#8e44ad;color:#fff;font-size:.7rem;padding:1px 5px;border-radius:3px;font-weight:700;">Athena 推介</span></td>
-              <td data-label="評分" class="rating">★3.93</td>
-              <td data-label="人均">¥2,000–2,999</td>
-              <td data-label="類型">炸豬排</td>
-              <td data-label="特色">極高評分；芝公園・東京鐵塔旁徒步約5分；<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> 無訂位，建議早到排隊</td>
-              <td data-label="訂位" class="booking-no"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> 否</td>
-            </tr>
           </tbody>
         </table>
-        <div class="tip"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="9" y1="18" x2="15" y2="18"/><line x1="10" y1="22" x2="14" y2="22"/><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"/></svg> 「bills」台場最具氣氛午餐，Ricotta鬆餅配彩虹橋海景，建議提前訂位。</div>
+        <div class="tip"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="9" y1="18" x2="15" y2="18"/><line x1="10" y1="22" x2="14" y2="22"/><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"/></svg> 「とんかつ いわい」評分★3.93，Athena 特別推介；無訂位制，建議 11:30 開門前到達排隊，入場後約45分即完成。後備：「川上庵」可電話預約，「BRASSERIE PAUL BOCUSE」可 Tabelog 線上訂位。</div>
       </div>
 
       <div class="activity">
@@ -1617,12 +1620,22 @@
       </div>
 
       <div class="meal-section">
-        <div class="meal-label"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3v7"/></svg> Jun 6 晚餐 ― 六本木・麻布台 &nbsp;18:30–20:00</div>
+        <div class="meal-label"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3v7"/></svg> Jun 6 晚餐 ― 麻布台 粋 稲葉 &nbsp;20:00 · 5位 &nbsp;<span style="background:#2d7d5a;color:#fff;border-radius:4px;padding:1px 8px;font-size:.75rem;font-weight:700;"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> 已預訂</span></div>
         <table class="rest-table">
           <thead>
             <tr><th>#</th><th>餐廳</th><th>評分</th><th>人均</th><th>類型</th><th>特色</th><th>訂位</th></tr>
           </thead>
           <tbody>
+            <tr style="background:#f0fff4;">
+              <td data-label="#">★</td>
+              <td data-label="餐廳"><a class="rest-link" href="https://tabelog.com/tokyo/A1307/A130701/13303752/" target="_blank">麻布台 粋 稲葉 Sui Inaba</a> <span style="background:#2d7d5a;color:#fff;font-size:.7rem;padding:1px 5px;border-radius:3px;font-weight:700;"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> 已預訂</span></td>
+              <td data-label="評分" class="rating">★3.56</td>
+              <td data-label="人均">¥5,000–6,000</td>
+              <td data-label="類型">割烹料理</td>
+              <td data-label="特色">季節割烹；吧台座位；六本木一丁目徒步3分<br><small>予約番号：<strong>3TJULESPAJ</strong> · <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 3.96 12 19.79 19.79 0 0 1 .89 3.37a2 2 0 0 1 2-2.18h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L6.94 9.86A16 16 0 0 0 13 15.9l1.22-1.22a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg> 09064083290 · 6/6 20:00 · 5位</small></td>
+              <td data-label="訂位" class="booking-yes"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> 已預訂</td>
+            </tr>
+            <tr><td colspan="7" style="padding:3px 10px;font-size:.72rem;color:#aaa;background:#fafafa;border-bottom:1px solid #eee;">── 後備選擇 ──</td></tr>
             <tr>
               <td data-label="#">1</td>
               <td data-label="餐廳"><a class="rest-link" href="https://tabelog.com/tokyo/A1307/A130701/13264260/" target="_blank">Iruka TOKYO 六本木</a></td>
@@ -1652,15 +1665,6 @@
             </tr>
             <tr>
               <td data-label="#">4</td>
-              <td data-label="餐廳"><a class="rest-link" href="https://tabelog.com/tokyo/A1307/A130701/13303752/" target="_blank">麻布台 粋 稲葉 Sui Inaba</a></td>
-              <td data-label="評分" class="rating">★3.56</td>
-              <td data-label="人均">¥5,000–6,000</td>
-              <td data-label="類型">割烹料理</td>
-              <td data-label="特色">季節割烹；吧台座位；六本木一丁目徒步3分；當日預約可嘗試</td>
-              <td data-label="訂位" class="booking-yes"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Tabelog</td>
-            </tr>
-            <tr>
-              <td data-label="#">5</td>
               <td data-label="餐廳"><a class="rest-link" href="https://tabelog.com/tokyo/A1307/A130701/13033082/" target="_blank">BRASSERIE PAUL BOCUSE Le Musée</a></td>
               <td data-label="評分" class="rating">★3.53</td>
               <td data-label="人均">¥4,000–6,000</td>
@@ -1670,14 +1674,21 @@
             </tr>
           </tbody>
         </table>
-        <div class="tip"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="9" y1="18" x2="15" y2="18"/><line x1="10" y1="22" x2="14" y2="22"/><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"/></svg> 「天ぷら近藤」是東京最高分天婦羅之一，蔬菜天婦羅著名。若訂不到，「銀座ちかみつ」是近年焼肉百名店新星。</div>
+        <div class="tip"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="9" y1="18" x2="15" y2="18"/><line x1="10" y1="22" x2="14" y2="22"/><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"/></svg> 「麻布台 粋 稲葉」已預訂，20:00 · 5位，予約番号 3TJULESPAJ。後備「Iruka TOKYO」為米其林拉麵，現場排隊；「焼肉ユッチャン」可 Tabelog / 電話訂位。</div>
       </div>
 
       <div class="activity">
-        <div class="activity-time">20:00–21:00</div>
+        <div class="activity-time">18:30–19:30</div>
         <div class="activity-content">
           <strong>銀座潮流購物</strong> &nbsp;<a class="rest-link" href="https://maps.google.com/?q=GINZA+SIX" target="_blank"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Google Maps</a>
-          <p>GINZA SIX · 全日本最大UNIQLO/GU旗艦店；之後搭丸之內線返新宿</p>
+          <p>東京鐵塔後計程車至銀座（約15分）；GINZA SIX · 全日本最大UNIQLO/GU旗艦店</p>
+        </div>
+      </div>
+      <div class="activity">
+        <div class="activity-time">19:30–20:00</div>
+        <div class="activity-content">
+          <strong>前往晚餐地點：麻布台 粋 稲葉（六本木一丁目）</strong>
+          <p>銀座→六本木一丁目 計程車約15分，或地鐵日比谷線 3 站</p>
         </div>
       </div>
 
