@@ -1845,12 +1845,20 @@
 
 <!-- ── 極みコース Modal ── -->
 <div id="course-modal" onclick="if(event.target===this)this.style.display='none'" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:2000;align-items:center;justify-content:center;">
-  <div style="background:#fff;border-radius:14px;padding:24px 22px 20px;max-width:88vw;width:360px;position:relative;box-shadow:0 8px 40px rgba(0,0,0,.3);max-height:85vh;overflow-y:auto;">
-    <button onclick="document.getElementById('course-modal').style.display='none'" style="position:absolute;top:12px;right:14px;background:none;border:none;font-size:1.2rem;cursor:pointer;color:#999;line-height:1;">✕</button>
-    <div style="font-size:.7rem;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px;">焼肉うしごろ 新宿三丁目店</div>
-    <div style="font-size:1.05rem;font-weight:800;color:#c0392b;margin-bottom:2px;">極みコース 14品</div>
-    <div style="font-size:.82rem;color:#555;margin-bottom:14px;">¥12,400/位（税込）· 完全個室 · 5名 · 6/4 20:00<br>予約番号：<strong style="color:#333;">X3XLELJDJM</strong> · 📞 09064083290</div>
-    <ol style="margin:0;padding-left:1.4em;font-size:.88rem;line-height:1.9;color:#333;">
+  <div style="background:#fff;border-radius:14px;padding:20px 20px 18px;max-width:88vw;width:360px;position:relative;box-shadow:0 8px 40px rgba(0,0,0,.3);max-height:85vh;overflow-y:auto;">
+    <!-- Header row -->
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;">
+      <div style="font-size:.7rem;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.05em;">焼肉うしごろ 新宿三丁目</div>
+      <div style="display:flex;gap:4px;align-items:center;">
+        <button id="clang-ja" onclick="setCourseLang('ja')" style="font-size:.7rem;padding:2px 7px;border:none;border-radius:4px;cursor:pointer;font-weight:700;font-family:inherit;background:#c0392b;color:#fff;">日</button>
+        <button id="clang-zh" onclick="setCourseLang('zh')" style="font-size:.7rem;padding:2px 7px;border:none;border-radius:4px;cursor:pointer;font-weight:700;font-family:inherit;background:#eee;color:#555;">中</button>
+        <button id="clang-en" onclick="setCourseLang('en')" style="font-size:.7rem;padding:2px 7px;border:none;border-radius:4px;cursor:pointer;font-weight:700;font-family:inherit;background:#eee;color:#555;">英</button>
+        <button onclick="document.getElementById('course-modal').style.display='none'" style="margin-left:4px;background:none;border:none;font-size:1.1rem;cursor:pointer;color:#aaa;line-height:1;padding:0 2px;">✕</button>
+      </div>
+    </div>
+    <div id="course-title" style="font-size:1.05rem;font-weight:800;color:#c0392b;margin-bottom:2px;">極みコース 14品</div>
+    <div id="course-meta" style="font-size:.82rem;color:#555;margin-bottom:12px;">¥12,400/位（税込）· 完全個室 · 5名 · 6/4 20:00<br>予約番号：<strong style="color:#333;">X3XLELJDJM</strong> · 📞 09064083290</div>
+    <ol id="course-items" style="margin:0;padding-left:1.4em;font-size:.88rem;line-height:1.9;color:#333;">
       <li>厳選和牛とキャビアのタルタル</li>
       <li>季節の前菜 3種</li>
       <li>サラダ</li>
@@ -1865,8 +1873,51 @@
       <li>季節の和牛石焼きご飯</li>
       <li>デザート</li>
     </ol>
-    <div style="margin-top:12px;font-size:.74rem;color:#999;line-height:1.5;">個室料：お会計額の10%<br>食材の入荷状況により変更あり</div>
+    <div id="course-note" style="margin-top:10px;font-size:.74rem;color:#999;line-height:1.5;">個室料：お会計額の10%<br>食材の入荷状況により変更あり</div>
   </div>
 </div>
+<script>
+(function(){
+  var data = {
+    title: { ja:'極みコース 14品', zh:'極品套餐 14道', en:'Premium Course · 14 Dishes' },
+    items: [
+      { ja:'厳選和牛とキャビアのタルタル',  zh:'嚴選和牛配魚子醬韃靼',         en:'Selected Wagyu & Caviar Tartare' },
+      { ja:'季節の前菜 3種',                zh:'季節前菜 3款',                  en:'Seasonal Appetizers (3 kinds)' },
+      { ja:'サラダ',                        zh:'沙律',                          en:'Salad' },
+      { ja:'ザブトンのすき焼き',             zh:'翼板肉壽喜燒',                  en:'Zabuton Chuck Flap Sukiyaki' },
+      { ja:'極みのタン',                    zh:'極品牛舌',                      en:'Premium Beef Tongue' },
+      { ja:'特上厚切りハラミ',               zh:'特上厚切牛橫膈膜',              en:'Extra-thick Premium Harami' },
+      { ja:'厳選部位 塩',                   zh:'嚴選部位 鹽燒',                 en:'Selected Cut, Salt-grilled' },
+      { ja:'本日のスープ',                  zh:'今日湯品',                      en:"Today's Soup" },
+      { ja:'牛ヒレカツサンド',               zh:'牛柳炸牛排三文治',              en:'Wagyu Fillet Katsu Sandwich' },
+      { ja:'上ミスジ 焼きしゃぶ',            zh:'上肩胛肉 燒涮涮',               en:'Misuji Top Blade, Yaki-shabu Style' },
+      { ja:'厚切りサーロイン',               zh:'厚切西冷牛扒',                  en:'Thick-cut Sirloin' },
+      { ja:'季節の和牛石焼きご飯',           zh:'季節和牛石燒飯',                en:'Seasonal Wagyu Stone-grilled Rice' },
+      { ja:'デザート',                      zh:'甜點',                          en:'Dessert' }
+    ],
+    note: {
+      ja:'個室料：お会計額の10%<br>食材の入荷状況により変更あり',
+      zh:'包廂費：消費額的 10%<br>食材或因供應情況而有所更改',
+      en:'Private room charge: 10% of total bill<br>Menu subject to change based on availability'
+    },
+    meta: {
+      ja:'¥12,400/位（税込）· 完全個室 · 5名 · 6/4 20:00',
+      zh:'¥12,400/位（含稅）· 完全包廂 · 5位 · 6/4 20:00',
+      en:'¥12,400/person (incl. tax) · Private room · 5 pax · Jun 4, 8pm'
+    }
+  };
+  window.setCourseLang = function(lang) {
+    document.getElementById('course-title').textContent = data.title[lang];
+    document.getElementById('course-meta').innerHTML = data.meta[lang] + '<br>予約番号：<strong style="color:#333;">X3XLELJDJM</strong> · 📞 09064083290';
+    document.getElementById('course-items').innerHTML = data.items.map(function(it){ return '<li>'+it[lang]+'</li>'; }).join('');
+    document.getElementById('course-note').innerHTML = data.note[lang];
+    ['ja','zh','en'].forEach(function(l){
+      var b = document.getElementById('clang-'+l);
+      b.style.background = l===lang ? '#c0392b' : '#eee';
+      b.style.color = l===lang ? '#fff' : '#555';
+    });
+  };
+})();
+</script>
 </body>
 </html>
