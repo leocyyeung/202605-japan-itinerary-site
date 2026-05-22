@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "japan-itinerary",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": ["-m", "http.server", "8899", "--directory", "/Users/leoyeung/Documents/Development/Personal/202605-japan-itinerary-site"],
+      "port": 8899
+    }
+  ]
+}
