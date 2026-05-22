@@ -173,48 +173,76 @@
     }
     .day-title { font-size: 1.05rem; font-weight: 600; }
     .day-date { font-size: .82rem; opacity: .75; }
-    .day-body { background: #fff; padding: 18px 20px; }
+    .day-body { background: #fff; padding: 0; }
 
     /* ── ACTIVITY LIST ── */
-    .activity { display: flex; gap: 14px; margin-bottom: 14px; }
+    .activity {
+      display: flex;
+      gap: 16px;
+      padding: 15px 20px;
+      border-bottom: 1px solid #edead4;
+      margin-bottom: 0;
+    }
     .activity-time {
-      font-size: .78rem;
+      font-size: .72rem;
       font-weight: 700;
       color: var(--accent);
-      min-width: 90px;
-      padding-top: 2px;
+      min-width: 88px;
+      max-width: 88px;
+      flex-shrink: 0;
+      padding-top: 3px;
       white-space: nowrap;
+      line-height: 1.4;
     }
-    .activity-content { flex: 1; }
-    .activity-content strong { font-size: .95rem; color: var(--dark); }
-    .activity-content p, .activity-content li { font-size: .85rem; color: #555; margin-top: 3px; }
-    .activity-content ul { padding-left: 16px; }
-    .activity-content li { margin-bottom: 3px; }
+    .activity-content { flex: 1; min-width: 0; }
+    .activity-content strong { font-size: .94rem; color: var(--dark); font-weight: 700; }
+    .activity-content p, .activity-content li { font-size: .84rem; color: #555; margin-top: 4px; line-height: 1.6; }
+    .activity-content ul { padding-left: 16px; margin-top: 4px; }
+    .activity-content li { margin-bottom: 4px; }
     .mapcode {
-      display: inline-block;
-      background: #e8f4e8;
-      color: var(--green);
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+      background: #edf7ed;
+      color: #2a6e48;
       border-radius: 4px;
-      padding: 1px 7px;
-      font-size: .78rem;
+      padding: 2px 7px;
+      font-size: .75rem;
       font-weight: 600;
-      margin-top: 4px;
+      margin: 3px 3px 0 0;
+      border: 1px solid #c3e0c3;
+    }
+
+    /* remove border from last child in day-body */
+    .day-body > *:last-child { border-bottom: none !important; }
+
+    /* bro-join / rental-card when direct children of day-body */
+    .day-body > .bro-join {
+      margin: 0;
+      border-radius: 0;
+      padding: 15px 20px;
+      border-bottom: 1px solid #edead4;
     }
 
     /* ── MEAL SECTION ── */
-    .meal-section { margin-top: 18px; }
+    .meal-section {
+      padding: 15px 20px;
+      border-bottom: 1px solid #edead4;
+    }
     .meal-label {
-      display: inline-flex;
+      display: flex;
+      flex-wrap: wrap;
       align-items: center;
-      gap: 6px;
-      background: #fff3ec;
-      border: 1px solid #f0c8a0;
-      border-radius: 6px;
-      padding: 5px 12px;
+      gap: 4px 8px;
+      background: #fff4ec;
+      border: 1px solid #efcaa5;
+      border-radius: 8px;
+      padding: 8px 14px;
       font-size: .82rem;
       font-weight: 700;
       color: var(--accent);
-      margin-bottom: 10px;
+      margin-bottom: 12px;
+      line-height: 1.5;
     }
     .rest-table { width: 100%; border-collapse: collapse; font-size: .82rem; }
     .rest-table th {
@@ -354,22 +382,39 @@
       .day-num { width: 36px; height: 36px; font-size: .95rem; }
       .day-title { font-size: .92rem; }
       .day-date { font-size: .75rem; }
-      .day-body { padding: 14px 14px; }
+      .day-body { padding: 0; }
 
       /* Activities */
-      .activity { flex-direction: column; gap: 2px; margin-bottom: 16px; }
+      .activity {
+        flex-direction: column;
+        gap: 3px;
+        padding: 12px 14px;
+        border-bottom: 1px solid #edead4;
+        margin-bottom: 0;
+      }
       .activity-time {
         min-width: unset;
-        font-size: .72rem;
+        max-width: unset;
+        font-size: .7rem;
+        font-weight: 700;
+        color: #7a4820;
         background: var(--warm);
         display: inline-block;
-        padding: 2px 8px;
-        border-radius: 4px;
-        margin-bottom: 4px;
+        padding: 2px 10px;
+        border-radius: 20px;
+        margin-bottom: 5px;
+        align-self: flex-start;
+        white-space: nowrap;
       }
       .activity-content strong { font-size: .9rem; }
       .activity-content p,
       .activity-content li { font-size: .82rem; }
+
+      /* bro-join inside day-body on mobile */
+      .day-body > .bro-join { padding: 12px 14px; border-radius: 0; margin: 0; }
+
+      /* Meal section on mobile */
+      .meal-section { padding: 12px 14px; }
 
       /* Rental card */
       .rental-card { padding: 10px 12px; font-size: .82rem; }
@@ -384,32 +429,43 @@
       .hotel-table td[data-label="酒店"] { font-size: .85rem; font-weight: 700; margin: 2px 0 1px; }
       .hotel-table td[data-label="備註"] { font-size: .74rem; color: #555; line-height: 1.45; }
 
-      /* Restaurant table → compact mobile cards */
+      /* Restaurant table → mobile cards */
       .rest-table thead { display: none; }
-      .rest-table tr { display: block; border-bottom: 2px solid var(--warm); padding: 7px 10px; }
-      .rest-table td { display: inline; padding: 0; border: none; font-size: .82rem; }
+      .rest-table tr {
+        display: block;
+        border-bottom: 1px solid var(--warm);
+        padding: 10px 0;
+      }
+      .rest-table tr:last-child { border-bottom: none; }
+      .rest-table td { display: inline; padding: 0; border: none; font-size: .83rem; }
       .rest-table td::before { display: none; }
       .rest-table td[data-label="#"] { display: none; }
       .rest-table td[data-label="特色"] { display: none; }
-      .rest-table td[data-label="餐廳"] { display: block; font-size: .87rem; margin-bottom: 3px; }
+      .rest-table td[data-label="餐廳"] {
+        display: block;
+        font-size: .88rem;
+        font-weight: 600;
+        margin-bottom: 4px;
+        line-height: 1.45;
+      }
       .rest-table td[data-label="評分"] { color: #c07000; font-weight: 700; }
       .rest-table td[data-label="人均"]::before,
       .rest-table td[data-label="預算"]::before,
       .rest-table td[data-label="預算/人"]::before { content: " · "; color: #bbb; }
-      .rest-table td[data-label="類型"]::before { content: " · "; color: #888; }
-      .rest-table td[data-label*="訂位"] { display: block; font-size: .78rem; margin-top: 2px; }
+      .rest-table td[data-label="類型"]::before { content: " · "; color: #999; }
+      .rest-table td[data-label*="訂位"] { display: block; font-size: .78rem; margin-top: 4px; color: var(--green); }
 
       /* 特色 button — mobile only */
       .tokushoku-btn {
         display: inline-block;
-        font-size: .68rem; padding: 1px 5px; margin-left: 5px;
+        font-size: .68rem; padding: 1px 6px; margin-left: 5px;
         background: var(--accent); color: #fff; border: none;
         border-radius: 3px; cursor: pointer; vertical-align: middle;
         font-family: inherit; white-space: nowrap;
       }
 
       /* Meal label */
-      .meal-label { font-size: .78rem; padding: 5px 10px; }
+      .meal-label { font-size: .78rem; padding: 7px 12px; }
 
       /* Backup grid */
       .backup-grid { grid-template-columns: 1fr; }
