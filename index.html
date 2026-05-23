@@ -137,6 +137,8 @@
     }
     .hotel-table tr:last-child td { border-bottom: none; }
     .hotel-table tr:nth-child(even) td { background: #faf8f5; }
+    .hotel-table tr.bro-row td { background: #dbeafe; }
+    .hotel-table tr.bro-row { background: #dbeafe; }
     .night-badge {
       display: inline-block;
       background: var(--accent);
@@ -500,8 +502,8 @@
   <a href="#day9"><span class="nav-day">Jun 7</span><span class="nav-sub">回港</span></a>
   <a href="#backup">備用景點</a>
   <div style="margin-left:auto;display:flex;align-items:center;gap:6px;padding:0 10px;flex-shrink:0;border-left:1px solid rgba(255,255,255,.12);">
-    <a href="https://dash.cloudflare.com/0a9c8249f207740e8049524a94f6b162/one/access-controls/policies/a9b3057a-0a75-4b4e-aae4-04aec009b5d9/edit" target="_blank" id="policy-btn" style="display:none;background:#f6821f;color:#fff;border-radius:20px;padding:5px 13px;font-size:.7rem;font-weight:700;flex-direction:row;border-bottom:none;line-height:1;white-space:nowrap;text-decoration:none;">Cloudflare</a>
-    <a href="https://console.cloud.google.com/auth/audience?project=personal-497105" target="_blank" id="google-btn" style="display:none;background:#4285f4;color:#fff;border-radius:20px;padding:5px 13px;font-size:.7rem;font-weight:700;flex-direction:row;border-bottom:none;line-height:1;white-space:nowrap;text-decoration:none;">Google</a>
+    <a href="https://dash.cloudflare.com/0a9c8249f207740e8049524a94f6b162/one/access-controls/policies/a9b3057a-0a75-4b4e-aae4-04aec009b5d9/edit" target="_blank" id="policy-btn" style="display:none;background:#f6821f;color:#fff;border-radius:20px;padding:5px 13px;font-size:.7rem;font-weight:700;flex-direction:row;align-items:center;gap:4px;border-bottom:none;line-height:1;white-space:nowrap;text-decoration:none;"><svg style="width:.9em;height:.9em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> Cloudflare</a>
+    <a href="https://console.cloud.google.com/auth/audience?project=personal-497105" target="_blank" id="google-btn" style="display:none;background:#4285f4;color:#fff;border-radius:20px;padding:5px 13px;font-size:.7rem;font-weight:700;flex-direction:row;align-items:center;gap:4px;border-bottom:none;line-height:1;white-space:nowrap;text-decoration:none;"><svg style="width:.9em;height:.9em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> Google</a>
     <a href="/cdn-cgi/access/logout" style="background:rgba(255,255,255,.1);color:rgba(255,255,255,.8);border-radius:20px;padding:5px 13px;font-size:.7rem;font-weight:600;flex-direction:row;border-bottom:none;line-height:1;white-space:nowrap;border:1px solid rgba(255,255,255,.2);">登出</a>
   </div>
 </nav>
@@ -533,10 +535,15 @@
       </div>
       <p style="font-size:.82rem;color:#555;margin:10px 0 2px">
         <strong>Yeung Cheuk Yu</strong> &nbsp;·&nbsp; 訂位代號：<strong>DFTFKP</strong> &nbsp;·&nbsp; Economy Light &nbsp;·&nbsp; 1PC 托運行李（23kg）
-        <span class="admin-doc">&nbsp;·&nbsp; <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg> <a href="/docs/flight-leo-cx504-cx521.pdf" target="_blank">機票收據</a></span>
+        <span class="admin-doc">&nbsp;·&nbsp; <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg> <a href="/docs/flight-leo-cx504-cx521.pdf" target="_blank">機票收據</a></span>
       </p>
       <p style="font-size:.8rem;color:#888;margin:4px 0 0">
         弟弟 Jun 2 &nbsp; CX &nbsp;｜&nbsp; HKG 15:30 → NRT（媽媽 安排，訂位代號另行確認）
+      </p>
+      <p style="font-size:.82rem;margin:10px 0 0;padding:8px 10px;background:#eff6ff;border-left:3px solid #3b82f6;border-radius:4px;">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <strong>出發前記得填寫 Visit Japan Web</strong>（日本入境申報，可加快通關）&nbsp;→&nbsp;
+        <a href="https://vjw-lp.digital.go.jp/" target="_blank" style="color:#2563eb;">vjw-lp.digital.go.jp</a>
       </p>
     </div>
 
@@ -556,9 +563,9 @@
             <td data-label="晚數"><span class="night-badge">2晚</span><br>May 30–Jun 1</td>
             <td data-label="地區"><strong>熱海區</strong></td>
             <td data-label="酒店">Atami Hotel Nagisakan</td>
-            <td data-label="備註">Sea view room · 含早餐 · 到埗付款<br><small>11-9 Nagisa-cho, Central Atami, 413-0014</small><span class="admin-doc"><br><small><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg> <a href="/docs/hotel-atami-booking.pdf" target="_blank">訂房確認</a> · <a href="/docs/hotel-atami-booking2.pdf" target="_blank">訂房確認 2</a> · <a href="/docs/hotel-atami-screenshot-1.png" target="_blank">截圖1</a> · <a href="/docs/hotel-atami-screenshot-2.png" target="_blank">截圖2</a> · <a href="/docs/hotel-atami-screenshot-3.png" target="_blank">截圖3</a></small></span></td>
+            <td data-label="備註">Sea view room · 含早餐 · 到埗付款 · 予約番号：<strong>202604110000064</strong><br><small>11-9 Nagisa-cho, Central Atami, 413-0014</small><span class="admin-doc"><br><small><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> <button onclick="document.getElementById('hotel-atami-modal').style.display='flex'" style="font-size:.72rem;padding:1px 7px;background:#2a5fa0;color:#fff;border:none;border-radius:3px;cursor:pointer;font-family:inherit;font-weight:700;">予約詳情</button> &nbsp;·&nbsp; <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg> <a href="/docs/hotel-atami-booking.pdf" target="_blank">訂房確認</a> · <a href="/docs/hotel-atami-booking2.pdf" target="_blank">訂房確認 2</a></small></span></td>
           </tr>
-          <tr style="background:#eef4ff;">
+          <tr class="bro-row">
             <td data-label="晚數"><span class="night-badge" style="background:#2a5fa0">1晚</span><br>Jun 2–Jun 3<br><span class="bro-badge" style="font-size:.68rem;margin-top:4px;display:inline-block">弟弟</span></td>
             <td data-label="地區"><strong>東京・新宿</strong></td>
             <td data-label="酒店">新宿站附近酒店<br><small>（媽媽 安排）</small></td>
@@ -568,25 +575,25 @@
             <td data-label="晚數"><span class="night-badge">3晚</span><br>Jun 1–Jun 4</td>
             <td data-label="地區"><strong>富士山區</strong></td>
             <td data-label="酒店">HOTEL MYSTAYS Fuji Onsen Resort<br><small>富士山展望温泉酒店</small></td>
-            <td data-label="備註">Comfort Twin · 非吸煙 · 已付款 (Agoda, 4/11)<br><small>2654 Arakura, Fuji-Yoshida-shi, 403-0011</small><span class="admin-doc"><br><small><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg> <a href="/docs/hotel-fuji-confirmation.pdf" target="_blank">訂房確認 #1716862703</a> · <a href="/docs/hotel-fuji-receipt.pdf" target="_blank">收據</a> · <a href="/docs/hotel-fuji-agoda.pdf" target="_blank">Agoda截圖</a></small></span></td>
+            <td data-label="備註">Comfort Twin · 非吸煙 · 已付款 (Agoda, 4/11)<br><small>2654 Arakura, Fuji-Yoshida-shi, 403-0011</small><span class="admin-doc"><br><small><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg> <a href="/docs/hotel-fuji-confirmation.pdf" target="_blank">訂房確認 #1716862703</a> · <a href="/docs/hotel-fuji-receipt.pdf" target="_blank">收據</a> · <a href="/docs/hotel-fuji-agoda.pdf" target="_blank">Agoda截圖</a></small></span></td>
           </tr>
-          <tr style="background:#eef4ff;">
+          <tr class="bro-row">
             <td data-label="晚數"><span class="night-badge" style="background:#2a5fa0">1晚</span><br>Jun 3–Jun 4<br><span class="bro-badge" style="font-size:.68rem;margin-top:4px;display:inline-block">弟弟</span></td>
             <td data-label="地區"><strong>富士山區</strong></td>
             <td data-label="酒店">HOTEL MYSTAYS Fuji Onsen Resort<br><small>富士山展望温泉酒店</small></td>
-            <td data-label="備註">Standard Double · 非吸煙 · 含早餐 · 已付款 (Agoda)<br>Booking ID: <strong>2011710359</strong><br><small>Check-in: 15:00 · Check-out: 11:00 · <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 3.96 12 19.79 19.79 0 0 1 .89 3.37a2 2 0 0 1 2-2.18h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L6.94 9.86A16 16 0 0 0 13 15.9l1.22-1.22a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg> +81-555-217-510</small><span class="admin-doc"><br><small><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg> <a href="/docs/hotel-fuji-jason-confirmation.pdf" target="_blank">訂房確認 #2011710359</a> · <a href="/docs/hotel-fuji-jason-agoda.pdf" target="_blank">Agoda截圖</a></small></span></td>
+            <td data-label="備註">Standard Double · 非吸煙 · 含早餐 · 已付款 (Agoda)<br>Booking ID: <strong>2011710359</strong><br><small>Check-in: 15:00 · Check-out: 11:00 · <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 3.96 12 19.79 19.79 0 0 1 .89 3.37a2 2 0 0 1 2-2.18h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L6.94 9.86A16 16 0 0 0 13 15.9l1.22-1.22a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg> +81-555-217-510</small><span class="admin-doc"><br><small><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg> <a href="/docs/hotel-fuji-jason-confirmation.pdf" target="_blank">訂房確認 #2011710359</a> · <a href="/docs/hotel-fuji-jason-agoda.pdf" target="_blank">Agoda截圖</a></small></span></td>
           </tr>
           <tr>
             <td data-label="晚數"><span class="night-badge">3晚</span><br>Jun 4–Jun 7</td>
             <td data-label="地區"><strong>東京・銀座</strong></td>
             <td data-label="酒店">HOTEL MUSSE GINZA MEITETSU<br><small>銀座名鐵穆瑟酒店 ホテルミュッセ 銀座名鉄</small></td>
-            <td data-label="備註">Check-in: 3pm後 · Check-out: 11am前<br><small>7-12-9 Ginza, Chuo, Tokyo, 104-0061</small><span class="admin-doc"><br><small><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg> <a href="/docs/hotel-ginza-confirmation.pdf" target="_blank">訂房確認 #1717894602</a></small></span></td>
+            <td data-label="備註">Check-in: 3pm後 · Check-out: 11am前<br><small>7-12-9 Ginza, Chuo, Tokyo, 104-0061</small><span class="admin-doc"><br><small><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg> <a href="/docs/hotel-ginza-confirmation.pdf" target="_blank">訂房確認 #1717894602</a></small></span></td>
           </tr>
-          <tr style="background:#eef4ff;">
+          <tr class="bro-row">
             <td data-label="晚數"><span class="night-badge" style="background:#2a5fa0">3晚</span><br>Jun 4–Jun 7<br><span class="bro-badge" style="font-size:.68rem;margin-top:4px;display:inline-block">弟弟</span></td>
             <td data-label="地區"><strong>東京・銀座</strong></td>
             <td data-label="酒店">HOTEL MUSSE GINZA MEITETSU<br><small>銀座名鐵穆瑟酒店 ホテルミュッセ 銀座名鉄</small></td>
-            <td data-label="備註">Small Double Room · 非吸煙 · 含早餐 · 已付款 (Agoda)<br>Booking ID: <strong>1727130882</strong><br><small>7-12-9 Ginza, Chuo, Tokyo, 104-0061 · <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 3.96 12 19.79 19.79 0 0 1 .89 3.37a2 2 0 0 1 2-2.18h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L6.94 9.86A16 16 0 0 0 13 15.9l1.22-1.22a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg> +81-3-3541-3535</small><span class="admin-doc"><br><small><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg> <a href="/docs/hotel-ginza-jason-confirmation.pdf" target="_blank">訂房確認 #1727130882</a> · <a href="/docs/hotel-ginza-email.pdf" target="_blank">確認郵件</a></small></span></td>
+            <td data-label="備註">Small Double Room · 非吸煙 · 含早餐 · 已付款 (Agoda)<br>Booking ID: <strong>1727130882</strong><br><small>7-12-9 Ginza, Chuo, Tokyo, 104-0061 · <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 3.96 12 19.79 19.79 0 0 1 .89 3.37a2 2 0 0 1 2-2.18h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L6.94 9.86A16 16 0 0 0 13 15.9l1.22-1.22a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg> +81-3-3541-3535</small><span class="admin-doc"><br><small><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg> <a href="/docs/hotel-ginza-jason-confirmation.pdf" target="_blank">訂房確認 #1727130882</a> · <a href="/docs/hotel-ginza-email.pdf" target="_blank">確認郵件</a></small></span></td>
           </tr>
         </tbody>
       </table>
@@ -626,6 +633,9 @@
           <small>汽車導航、ETC車載設備為標準配置</small></td>
         </tr>
       </table>
+      <div style="margin-top:12px;padding-top:10px;border-top:1px solid #ccd9f0;">
+        <button onclick="document.getElementById('rental-notes-modal').style.display='flex'" style="font-size:.82rem;padding:5px 14px;background:#c0392b;color:#fff;border:none;border-radius:5px;cursor:pointer;font-family:inherit;font-weight:700;display:inline-flex;align-items:center;gap:5px;"><svg style="width:1em;height:1em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg> 保險及還車需知</button>
+      </div>
     </div>
 
     <div class="section-title"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3v7"/></svg> Tabelog 訂位資料</div>
@@ -709,6 +719,7 @@
         <div class="activity-time">早上</div>
         <div class="activity-content">
           <strong>十國峠展望台（十国峠ケーブルカー）</strong> — 建議 1.5 小時 &nbsp;<a class="rest-link" href="https://www.google.com/maps/place/%E5%8D%81%E5%9C%8B%E5%B3%A0%E5%B1%95%E6%9C%9B%E5%8F%B0/@35.1273789,139.0415509,14z/data=!4m6!3m5!1s0x60199629225abb1f:0xa7ed579fe9d6c599!8m2!3d35.1277089!4d139.0410563!16s%2Fg%2F11c54nbf0x?entry=ttu&g_ep=EgoyMDI2MDUxNy4wIKXMDSoASAFQAw%3D%3D" target="_blank"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Maps</a>
+          <span class="mapcode"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> 116 739 774*74 &nbsp;<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 17V7h4a3 3 0 0 1 0 6H9"/></svg> 116 739 804*54（免費，320台）</span>
           <ul>
             <li>熱海酒店出發，駕車約 <strong>20分鐘</strong>；票价 往返¥580</li>
             <li>ケーブルカー約 4 分鐘直達山頂（海拔 771m）；360° 眺望：富士山・箱根・伊豆半島・相模灣・駿河灣，「十國（十個令制國）」盡收眼底</li>
@@ -732,7 +743,7 @@
         </div>
       </div>
       <div class="meal-section">
-        <div class="meal-label"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3v7"/></svg> May 31 午餐 ― 熱海 &nbsp;電話訂位 · 4位</div>
+        <div class="meal-label"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3v7"/></svg> May 31 午餐 ― 熱海</div>
         <table class="rest-table">
           <thead>
             <tr><th>#</th><th>餐廳</th><th>評分</th><th>預算/人</th><th>特色</th><th>訂位</th></tr>
@@ -748,7 +759,6 @@
             </tr>
           </tbody>
         </table>
-        <div class="tip"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="9" y1="18" x2="15" y2="18"/><line x1="10" y1="22" x2="14" y2="22"/><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"/></svg> 請提前致電預訂 5/31 午餐、4 位。</div>
       </div>
 
       <div class="activity">
@@ -770,6 +780,7 @@
         <div class="activity-time">下午茶／晚上</div>
         <div class="activity-content">
           <strong>熱海商店街 & 人氣甜點</strong> &nbsp;<a class="rest-link" href="https://maps.google.com/?q=%E7%86%B1%E6%B5%B7%E9%8A%80%E5%BA%A7%E5%95%86%E5%BA%97%E8%A1%97" target="_blank"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Map</a>
+          <span class="mapcode"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 17V7h4a3 3 0 0 1 0 6H9"/></svg> 銀座商店街：市營第1親水公園 116 654 074*64 / 東駐車場（最大260台）116 654 407*53 · 平和通り：市營駅前 116 685 180*37（各 ¥110/30分）</span>
           <ul>
             <li><strong>熱海平和通商店街</strong>──熱海、伊豆、靜岡特產；溫泉饅頭</li>
             <li><strong>熱海銀座商店街</strong></li>
@@ -784,7 +795,7 @@
       </div>
 
       <div class="meal-section">
-        <div class="meal-label"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3v7"/></svg> May 31 晚餐 ― 熱海 &nbsp;電話訂位 · 4位</div>
+        <div class="meal-label"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3v7"/></svg> May 31 晚餐 ― 熱海</div>
         <table class="rest-table">
           <thead>
             <tr><th>#</th><th>餐廳</th><th>評分</th><th>預算/人</th><th>特色</th><th>訂位</th></tr>
@@ -800,7 +811,6 @@
             </tr>
           </tbody>
         </table>
-        <div class="tip"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="9" y1="18" x2="15" y2="18"/><line x1="10" y1="22" x2="14" y2="22"/><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"/></svg> 請提前致電預訂 5/31 晚餐、4 位。</div>
       </div>
     </div>
   </div>
@@ -858,22 +868,38 @@
             <li>地址：靜岡縣伊東市池672-2</li>
             <li><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> <strong>大風時纜車停駛</strong>，後備方案見下方</li>
           </ul>
-          <div style="margin-top:8px; padding:10px 12px; background:#f0f7f0; border-left:3px solid #5a9a6a; border-radius:4px; font-size:.85rem;">
-            <strong><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="22" x2="12" y2="8"/><path d="M12 14H7a4 4 0 0 1-4-4V8"/><path d="M12 11h5a4 4 0 0 0 4-4V5"/></svg> 後備：伊豆シャボテン動物公園（仙人掌公園）</strong><br>
-            大室山纜車停駛時，步行約 <strong>5 分鐘</strong>即達。<br>
-            <ul style="margin:5px 0 0 0; padding-left:1.2em;">
-              <li>約 1,500 種仙人掌 + 150 種動物；可近距離餵食水豚🦦、羊駝等</li>
-              <li><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v2z"/><line x1="9" y1="2" x2="9" y2="22"/></svg> 入場費：平日 ¥2,700 · 週末/假日 ¥2,800（¥200 折扣憑巴士一日券）</li>
-              <li>⏰ 開放：9:00–17:00（11月–2月至16:00）；全年無休</li>
-              <li><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="5" width="22" height="14" rx="2"/><path d="M1 11h22"/><line x1="7" y1="5" x2="7" y2="11"/><line x1="17" y1="5" x2="17" y2="11"/><line x1="5" y1="19" x2="5" y2="21"/><line x1="19" y1="19" x2="19" y2="21"/></svg> 從伊豆高原駅 巴士約 20 分鐘（¥430）至終點 Shaboten Koen</li>
-            </ul>
-          </div>
         </div>
       </div>
 
+      <div class="activity" style="background:#fffbeb;border-left:3px solid #f59e0b;">
+        <div class="activity-time">後備 1</div>
+        <div class="activity-content">
+          <strong>小室山公園（小室山リフト）</strong> — 建議 1–1.5 小時 &nbsp;<a class="rest-link" href="https://maps.google.com/?q=%E5%B0%8F%E5%AE%A4%E5%B1%B1%E5%85%AC%E5%9C%92" target="_blank"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Maps</a>
+          <span class="mapcode"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> 488 675 443*48 &nbsp;<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 17V7h4a3 3 0 0 1 0 6H9"/></svg> 免費・約170台（第1〜第3停車場）</span>
+          <ul>
+            <li>距大室山駕車約 <strong>10分鐘</strong>；伊東市 川奈1428</li>
+            <li>リフト往返 ¥800（大人）· 9:30–16:00</li>
+            <li>360° 眺望相模灣・伊豆半島・天氣好可遠眺富士山；花季（4–5月）山坡鋪滿杜鵑花</li>
+            <li>山頂有步道環繞，平坦易行；約15–20分鐘可繞一圈</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="activity" style="background:#fffbeb;border-left:3px solid #f59e0b;">
+        <div class="activity-time">後備 2</div>
+        <div class="activity-content">
+          <strong>伊豆シャボテン動物公園（仙人掌公園）</strong> &nbsp;<a class="rest-link" href="https://maps.google.com/?q=%E4%BC%8A%E8%B1%86%E3%82%B7%E3%83%A3%E3%83%9C%E3%83%86%E3%83%B3%E5%85%AC%E5%9C%92" target="_blank"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Maps</a>
+          <ul>
+            <li>大室山纜車停駛時，步行約 <strong>5 分鐘</strong>即達</li>
+            <li>約 1,500 種仙人掌 + 150 種動物；可近距離餵食水豚🦦、羊駝等</li>
+            <li><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v2z"/><line x1="9" y1="2" x2="9" y2="22"/></svg> 入場費：平日 ¥2,700 · 週末/假日 ¥2,800</li>
+            <li>⏰ 開放：9:00–17:00（11月–2月至16:00）；全年無休</li>
+          </ul>
+        </div>
+      </div>
 
       <div class="meal-section">
-        <div class="meal-label"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3v7"/></svg> Jun 1 晚餐 ― 伊豆・熱海 &nbsp;電話訂位 · 4位</div>
+        <div class="meal-label"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3v7"/></svg> Jun 1 晚餐 ― 伊豆・熱海</div>
         <table class="rest-table">
           <thead>
             <tr><th>#</th><th>餐廳</th><th>評分</th><th>預算/人</th><th>特色</th><th>訂位</th></tr>
@@ -889,7 +915,6 @@
             </tr>
           </tbody>
         </table>
-        <div class="tip"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="9" y1="18" x2="15" y2="18"/><line x1="10" y1="22" x2="14" y2="22"/><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"/></svg> 請提前致電預訂 6/1 晚餐、4 位。</div>
       </div>
 
       <div class="tip" style="margin-top:16px"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17H3a2 2 0 0 1-2-2V9l2-4h14l2 4v6a2 2 0 0 1-2 2h-2"/><circle cx="8" cy="17" r="2"/><circle cx="16" cy="17" r="2"/></svg> 晚餐後駕車前往富士山區酒店，預計車程 <strong>約1–1.5小時</strong>（伊豆高原 → 富士吉田）<br><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> <strong>今晚起入住富士山展望温泉酒店 HOTEL MYSTAYS Fuji Onsen Resort</strong></div>
@@ -901,7 +926,7 @@
     <div class="day-header">
       <div class="day-num">4</div>
       <div>
-        <div class="day-title">富士山腰 — 新倉山 · 五合目 · 大石公園</div>
+        <div class="day-title">富士山腰 — 五合目 · 新倉山 · 大石公園</div>
         <div class="day-date">Jun 2（Tuesday）</div>
       </div>
     </div>
@@ -920,6 +945,18 @@
       <div class="activity">
         <div class="activity-time">早上（早餐後即出發）</div>
         <div class="activity-content">
+          <strong>富士山五合目（富士スバルライン）</strong> &nbsp;<a class="rest-link" href="https://maps.google.com/?q=%E5%AF%8C%E5%A3%AB%E5%B1%B1%E4%BA%94%E5%90%88%E7%9B%AE" target="_blank"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> 五合目</a>
+          <span class="mapcode"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> 312 842 533*03</span>
+          <ul>
+            <li>⛰ 早出發雲層較低，能見度最佳；從河口湖 IC 駕車上山約 <strong>40–50分鐘</strong></li>
+            <li>需繳富士スバルライン通行費 ¥2,800/車 &nbsp;<span class="mapcode"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 17V7h4a3 3 0 0 1 0 6H9"/></svg> 五合目免費330台</span></li>
+            <li>⚠️ 2025年起新增保全費 ¥2,000/人；旺季建議提早出發避開人潮</li>
+          </ul>
+        </div>
+      </div>
+      <div class="activity">
+        <div class="activity-time">中午</div>
+        <div class="activity-content">
           <strong>新倉山淺間公園 &amp; 新倉富士淺間神社</strong> &nbsp;<a class="rest-link" href="https://maps.google.com/?q=%E6%96%B0%E5%80%89%E5%B1%B1%E6%B5%85%E9%96%93%E5%85%AC%E5%9C%92" target="_blank"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> 新倉山</a>
           <span class="mapcode"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> 161 276 580*60 &nbsp;<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 17V7h4a3 3 0 0 1 0 6H9"/></svg> 161 276 706*78（免費，山腳停車場）</span>
           <ul>
@@ -928,24 +965,14 @@
             <li>自駕：停車場在山腳（免費），<strong>車輛無法直達展望台</strong>，需步行上山</li>
             <li>步行路線：398階「咲耶姬階梯」或旁邊較平緩坡道，約10–15分鐘登頂</li>
             <li>地址：〒403-0031 山梨縣富士吉田市淺間 2-4-1（新倉富士淺間神社）</li>
-            <li>從河口湖 IC 開車約15分鐘</li>
+            <li>從五合目下山後駕車約 <strong>30分鐘</strong></li>
             <li><a href="https://andyventure.com/japan-arakurayama-sengen-park/" target="_blank"><svg class="ico" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="5 3 19 12 5 21 5 3"/></svg> 參考攻略</a> &nbsp;·&nbsp; <a href="https://www.arakurafujisengen.com/" target="_blank"><svg class="ico" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="5 3 19 12 5 21 5 3"/></svg> 新倉富士淺間神社官網</a> &nbsp;·&nbsp; <a href="https://fujiyoshida.net/zh_TW/see-and-do/12" target="_blank"><svg class="ico" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="5 3 19 12 5 21 5 3"/></svg> 富士吉田市觀光（繁中）</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="activity">
-        <div class="activity-time">中午</div>
-        <div class="activity-content">
-          <strong>富士山五合目</strong> &nbsp;<a class="rest-link" href="https://maps.google.com/?q=%E5%AF%8C%E5%A3%AB%E5%B1%B1%E4%BA%94%E5%90%88%E7%9B%AE" target="_blank"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> 五合目</a>
-          <span class="mapcode"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> 312 842 533*03</span>
-          <ul>
-            <li>需繳富士スバルライン通行費 ¥2,800/車 &nbsp;<span class="mapcode"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 17V7h4a3 3 0 0 1 0 6H9"/></svg> 五合目免費330台</span></li>
           </ul>
         </div>
       </div>
 
       <div class="meal-section">
-        <div class="meal-label"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3v7"/></svg> Jun 2 午餐 ― 河口湖 &nbsp;電話訂位 · 4位</div>
+        <div class="meal-label"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3v7"/></svg> Jun 2 午餐 ― 河口湖</div>
         <table class="rest-table">
           <thead>
             <tr><th>#</th><th>餐廳</th><th>評分</th><th>預算/人</th><th>特色</th><th>訂位</th></tr>
@@ -961,7 +988,6 @@
             </tr>
           </tbody>
         </table>
-        <div class="tip"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="9" y1="18" x2="15" y2="18"/><line x1="10" y1="22" x2="14" y2="22"/><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"/></svg> 請提前致電預訂 6/2 午餐、4 位。</div>
       </div>
 
       <div class="activity">
@@ -978,7 +1004,7 @@
       </div>
 
       <div class="meal-section">
-        <div class="meal-label"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3v7"/></svg> Jun 2 晚餐 ― 河口湖 &nbsp;電話訂位 · 4位</div>
+        <div class="meal-label"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3v7"/></svg> Jun 2 晚餐 ― 河口湖</div>
         <table class="rest-table">
           <thead>
             <tr><th>#</th><th>餐廳</th><th>評分</th><th>預算/人</th><th>特色</th><th>訂位</th></tr>
@@ -994,7 +1020,7 @@
             </tr>
           </tbody>
         </table>
-        <div class="tip"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="9" y1="18" x2="15" y2="18"/><line x1="10" y1="22" x2="14" y2="22"/><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"/></svg> 「歩成」三度奪全國大賽冠軍，以南瓜味噌湯底馳名，請提前致電預訂。</div>
+        <div class="tip"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="9" y1="18" x2="15" y2="18"/><line x1="10" y1="22" x2="14" y2="22"/><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"/></svg> 「歩成」三度奪全國大賽冠軍，以南瓜味噌湯底馳名。</div>
       </div>
     </div>
   </div>
@@ -1068,7 +1094,7 @@
             </tr>
           </tbody>
         </table>
-        <div class="tip"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="9" y1="18" x2="15" y2="18"/><line x1="10" y1="22" x2="14" y2="22"/><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"/></svg> 「THE PARK」落地窗直望山中湖與富士山，舒芙蕾鬆餅必點，建議提前訂位。</div>
+        <div class="tip"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="9" y1="18" x2="15" y2="18"/><line x1="10" y1="22" x2="14" y2="22"/><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"/></svg> 「THE PARK」落地窗直望山中湖與富士山，舒芙蕾鬆餅必點。</div>
       </div>
 
       <div class="activity">
@@ -1112,7 +1138,6 @@
             </tr>
           </tbody>
         </table>
-        <div class="tip"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="9" y1="18" x2="15" y2="18"/><line x1="10" y1="22" x2="14" y2="22"/><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"/></svg> 河口湖駅附近，請提前致電預訂 6/3 晚餐、4 位。</div>
       </div>
     </div>
   </div>
@@ -1197,7 +1222,7 @@
               <td data-label="評分" class="rating">★3.60</td>
               <td data-label="人均">¥1,000–1,999</td>
               <td data-label="類型">日本料理</td>
-              <td data-label="特色">「日本料理 東京 100選 2021」入選；魚鮮料理為主；午餐需提前電話預訂；西武新宿駅5分 &nbsp;⚠️ 週三・日・假日休</td>
+              <td data-label="特色">「日本料理 東京 100選 2021」入選；魚鮮料理為主；西武新宿駅5分 &nbsp;⚠️ 週三・日・假日休</td>
               <td data-label="訂位" class="booking-yes"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> 電話 03-5389-5581</td>
             </tr>
             <tr>
@@ -2090,6 +2115,150 @@
       b.style.color = l===lang ? '#fff' : '#555';
     });
   };
+})();
+</script>
+
+<!-- ═══ Rental Notes Modal ═══ -->
+<div id="rental-notes-modal" onclick="if(event.target===this)this.style.display='none'" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:2000;align-items:center;justify-content:center;">
+  <div style="background:#fff;border-radius:14px;padding:20px 20px 18px;max-width:92vw;width:420px;position:relative;box-shadow:0 8px 40px rgba(0,0,0,.3);max-height:88vh;overflow-y:auto;">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;">
+      <div style="font-size:.95rem;font-weight:800;color:#c0392b;display:flex;align-items:center;gap:5px;"><svg style="width:1em;height:1em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg> 保險及還車需知</div>
+      <button onclick="document.getElementById('rental-notes-modal').style.display='none'" style="background:none;border:none;font-size:1.2rem;cursor:pointer;color:#aaa;line-height:1;padding:0 2px;">✕</button>
+    </div>
+
+    <!-- Fuel Types -->
+    <div style="margin-bottom:14px;padding:10px 12px;background:#fff8f0;border-left:3px solid #e67e22;border-radius:4px;">
+      <div style="font-size:.78rem;font-weight:700;color:#e67e22;margin-bottom:8px;text-transform:uppercase;letter-spacing:.04em;">⛽ 油種確認 — Nissan Serena 加 Regular</div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;">
+        <span style="background:#b71c1c;color:#fff;padding:4px 12px;border-radius:5px;font-weight:700;font-size:.85rem;">レギュラー<br><span style="font-size:.75rem;font-weight:400;">Regular ✓</span></span>
+        <span style="background:#9e9d24;color:#fff;padding:4px 12px;border-radius:5px;font-weight:700;font-size:.85rem;">ハイオク<br><span style="font-size:.75rem;font-weight:400;">Premium</span></span>
+        <span style="background:#2e7d32;color:#fff;padding:4px 12px;border-radius:5px;font-weight:700;font-size:.85rem;">軽油<br><span style="font-size:.75rem;font-weight:400;">Diesel</span></span>
+      </div>
+    </div>
+
+    <!-- Return Notes -->
+    <div style="margin-bottom:14px;">
+      <div style="font-size:.8rem;font-weight:700;color:#555;margin-bottom:6px;border-bottom:1px solid #eee;padding-bottom:4px;">🚗 還車注意事項</div>
+      <ol style="margin:0;padding-left:1.3em;font-size:.84rem;line-height:1.8;color:#333;">
+        <li>還車前請在附近加油站<strong>加滿油箱</strong>（レギュラー），保留加油收據，還車時出示</li>
+        <li>如還車日期或時間有更改，請<strong>提前通知</strong>出發點（新宿站西口 03-3347-4123）</li>
+      </ol>
+    </div>
+
+    <!-- Accident Steps -->
+    <div style="margin-bottom:14px;">
+      <div style="font-size:.8rem;font-weight:700;color:#555;margin-bottom:6px;border-bottom:1px solid #eee;padding-bottom:4px;">⚠️ 發生事故時（3步驟）</div>
+      <ol style="margin:0;padding-left:1.3em;font-size:.84rem;line-height:1.8;color:#333;">
+        <li>先致電 <strong>119</strong>（救護車）協助傷者，再將車輛移至安全位置</li>
+        <li>致電 <strong>110</strong>（警察）報案，雙方均須報警，取得<strong>事故證明書</strong></li>
+        <li>致電出發點或保險公司事故受理中心</li>
+      </ol>
+    </div>
+
+    <!-- Contacts -->
+    <div style="font-size:.8rem;font-weight:700;color:#555;margin-bottom:8px;border-bottom:1px solid #eee;padding-bottom:4px;">📞 緊急聯絡號碼</div>
+    <table style="width:100%;border-collapse:collapse;font-size:.84rem;">
+      <tr style="background:#fff0f0;">
+        <td style="padding:6px 8px;font-weight:700;color:#c0392b;white-space:nowrap;">🚨 警察</td>
+        <td style="padding:6px 8px;font-size:1.1rem;font-weight:800;letter-spacing:.05em;">110</td>
+        <td style="padding:6px 8px;font-size:.75rem;color:#666;">事故雙方均須致電</td>
+      </tr>
+      <tr>
+        <td style="padding:6px 8px;font-weight:700;color:#c0392b;white-space:nowrap;">🚑 救護車</td>
+        <td style="padding:6px 8px;font-size:1.1rem;font-weight:800;letter-spacing:.05em;">119</td>
+        <td style="padding:6px 8px;font-size:.75rem;color:#666;">有人受傷時</td>
+      </tr>
+      <tr style="background:#f0f4ff;">
+        <td style="padding:6px 8px;font-weight:700;color:#2a5fa0;white-space:nowrap;font-size:.8rem;">保險事故受理<br><small style="font-weight:400;color:#666;">Sompo Japan</small></td>
+        <td style="padding:6px 8px;font-weight:700;letter-spacing:.03em;">0422-35-4219<br><small style="font-weight:400;color:#666;">或免費 0120-256-110</small></td>
+        <td style="padding:6px 8px;font-size:.75rem;color:#666;">365天全年服務</td>
+      </tr>
+      <tr>
+        <td style="padding:6px 8px;font-weight:700;color:#2a5fa0;white-space:nowrap;font-size:.8rem;">道路救援<br><small style="font-weight:400;color:#666;">JAF</small></td>
+        <td style="padding:6px 8px;font-weight:700;letter-spacing:.03em;">0570-00-8139</td>
+        <td style="padding:6px 8px;font-size:.75rem;color:#666;">拖車·爆胎等</td>
+      </tr>
+      <tr style="background:#f0f4ff;">
+        <td style="padding:6px 8px;font-weight:700;color:#2a5fa0;white-space:nowrap;font-size:.8rem;">外籍客戶諮詢<br><small style="font-weight:400;color:#666;">非事故查詢</small></td>
+        <td style="padding:6px 8px;font-weight:700;letter-spacing:.03em;">03-6625-8290</td>
+        <td style="padding:6px 8px;font-size:.75rem;color:#666;">其他事宜查詢</td>
+      </tr>
+      <tr>
+        <td style="padding:6px 8px;font-weight:700;color:#2a5fa0;white-space:nowrap;font-size:.8rem;">Nissan 還車店<br><small style="font-weight:400;color:#666;">新宿站西口</small></td>
+        <td style="padding:6px 8px;font-weight:700;letter-spacing:.03em;">03-3347-4123</td>
+        <td style="padding:6px 8px;font-size:.75rem;color:#666;">還車時間更改通知</td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<!-- ═══ Hotel Atami Booking Modal ═══ -->
+<div id="hotel-atami-modal" onclick="if(event.target===this)this.style.display='none'" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:2000;align-items:center;justify-content:center;">
+  <div style="background:#fff;border-radius:14px;padding:20px 20px 18px;max-width:90vw;width:400px;position:relative;box-shadow:0 8px 40px rgba(0,0,0,.3);max-height:85vh;overflow-y:auto;">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;">
+      <div style="display:flex;align-items:center;gap:5px;font-size:.7rem;font-weight:700;color:#2a5fa0;text-transform:uppercase;letter-spacing:.05em;">
+        <svg style="width:1em;height:1em;vertical-align:-.1em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        熱海 ホテル渚館
+      </div>
+      <div style="display:flex;gap:4px;align-items:center;">
+        <button id="hlang-ja" onclick="setHotelAtamiLang('ja')" style="font-size:.7rem;padding:2px 7px;border:none;border-radius:4px;cursor:pointer;font-weight:700;font-family:inherit;background:#2a5fa0;color:#fff;">日</button>
+        <button id="hlang-zh" onclick="setHotelAtamiLang('zh')" style="font-size:.7rem;padding:2px 7px;border:none;border-radius:4px;cursor:pointer;font-weight:700;font-family:inherit;background:#eee;color:#555;">中</button>
+        <button id="hlang-en" onclick="setHotelAtamiLang('en')" style="font-size:.7rem;padding:2px 7px;border:none;border-radius:4px;cursor:pointer;font-weight:700;font-family:inherit;background:#eee;color:#555;">英</button>
+        <button onclick="document.getElementById('hotel-atami-modal').style.display='none'" style="margin-left:4px;background:none;border:none;font-size:1.1rem;cursor:pointer;color:#aaa;line-height:1;padding:0 2px;">✕</button>
+      </div>
+    </div>
+    <div id="hotel-atami-content" style="font-size:.88rem;line-height:1.8;color:#333;"></div>
+  </div>
+</div>
+<script>
+(function(){
+  var ha = {
+    ja: '<strong style="color:#2a5fa0;font-size:1rem;">予約中</strong><br>' +
+        '<strong>熱海 ホテル渚館</strong><br>' +
+        '2026/05/30 ～ 2026/06/01 &nbsp;<span style="background:#e8f0fe;color:#2a5fa0;border-radius:3px;padding:1px 6px;font-size:.8rem;font-weight:700;">2泊</span><br><br>' +
+        '<strong>プラン</strong><br>【早期割30｜朝食付】30日前迄のご予約で30％OFF！<br>相模湾を望む展望大浴場と心ほどける和朝食 朝食付<br><br>' +
+        '<strong>部屋・人数</strong><br>2室 &nbsp;大人 4 名 &nbsp;その他 0 名<br><br>' +
+        '<strong>宿泊代表者</strong><br>Yeung Cheuk Yu<br><br>' +
+        '<table style="width:100%;border-collapse:collapse;font-size:.84rem;">' +
+        '<tr><td style="color:#888;padding:2px 10px 2px 0;white-space:nowrap;">予約番号</td><td><strong>202604110000064</strong></td></tr>' +
+        '<tr><td style="color:#888;padding:2px 10px 2px 0;">予約日</td><td>2026/04/11</td></tr>' +
+        '<tr><td style="color:#888;padding:2px 10px 2px 0;">お支払い</td><td><strong>190,960 円</strong>（現地払い）</td></tr>' +
+        '</table>',
+    zh: '<strong style="color:#2a5fa0;font-size:1rem;">預訂中</strong><br>' +
+        '<strong>熱海 渚館酒店（ホテル渚館）</strong><br>' +
+        '2026/05/30 ～ 2026/06/01 &nbsp;<span style="background:#e8f0fe;color:#2a5fa0;border-radius:3px;padding:1px 6px;font-size:.8rem;font-weight:700;">2晚</span><br><br>' +
+        '<strong>房價方案</strong><br>【早割30｜含早餐】30天前預訂享 30% OFF！<br>可眺望相模灣的展望大浴場 + 和式早餐<br><br>' +
+        '<strong>房間及人數</strong><br>2室 &nbsp;大人 4 名<br><br>' +
+        '<strong>住宿代表者</strong><br>Yeung Cheuk Yu<br><br>' +
+        '<table style="width:100%;border-collapse:collapse;font-size:.84rem;">' +
+        '<tr><td style="color:#888;padding:2px 10px 2px 0;white-space:nowrap;">預約號碼</td><td><strong>202604110000064</strong></td></tr>' +
+        '<tr><td style="color:#888;padding:2px 10px 2px 0;">預約日期</td><td>2026/04/11</td></tr>' +
+        '<tr><td style="color:#888;padding:2px 10px 2px 0;">付款方式</td><td><strong>¥190,960</strong>（現場付款）</td></tr>' +
+        '</table>',
+    en: '<strong style="color:#2a5fa0;font-size:1rem;">Reservation Confirmed</strong><br>' +
+        '<strong>Atami Hotel Nagisakan</strong><br>' +
+        '2026/05/30 – 2026/06/01 &nbsp;<span style="background:#e8f0fe;color:#2a5fa0;border-radius:3px;padding:1px 6px;font-size:.8rem;font-weight:700;">2 nights</span><br><br>' +
+        '<strong>Plan</strong><br>Early Bird 30% OFF | Breakfast Included<br>Book 30 days in advance. Features ocean-view communal bath &amp; Japanese breakfast.<br><br>' +
+        '<strong>Rooms &amp; Guests</strong><br>2 rooms &nbsp;· &nbsp;4 adults<br><br>' +
+        '<strong>Lead Guest</strong><br>Yeung Cheuk Yu<br><br>' +
+        '<table style="width:100%;border-collapse:collapse;font-size:.84rem;">' +
+        '<tr><td style="color:#888;padding:2px 10px 2px 0;white-space:nowrap;">Booking No.</td><td><strong>202604110000064</strong></td></tr>' +
+        '<tr><td style="color:#888;padding:2px 10px 2px 0;">Booked on</td><td>2026/04/11</td></tr>' +
+        '<tr><td style="color:#888;padding:2px 10px 2px 0;">Payment</td><td><strong>¥190,960</strong> (pay at hotel)</td></tr>' +
+        '</table>'
+  };
+  window.setHotelAtamiLang = function(lang) {
+    document.getElementById('hotel-atami-content').innerHTML = ha[lang];
+    ['ja','zh','en'].forEach(function(l){
+      var btn = document.getElementById('hlang-'+l);
+      btn.style.background = l===lang ? '#2a5fa0' : '#eee';
+      btn.style.color = l===lang ? '#fff' : '#555';
+    });
+  };
+  document.getElementById('hotel-atami-modal').addEventListener('mousedown', function(e){
+    if(e.target === this) this.style.display='none';
+  });
+  setHotelAtamiLang('ja');
 })();
 </script>
 </body>
